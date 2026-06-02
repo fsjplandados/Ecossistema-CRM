@@ -1,4 +1,4 @@
-"use client";
+| "use client";
 
 import { useState, useEffect, useCallback } from "react";
 import {
@@ -14,6 +14,8 @@ import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import KPICard from "@/components/KPICard";
 import MultiSelectFilter from "@/components/MultiSelectFilter";
+import CategoryTable from "@/components/CategoryTable";
+import TopProductsList from "@/components/TopProductsList";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
@@ -112,6 +114,12 @@ export default function PerformancePage() {
   const [selCategories, setSelCategories] = useState<string[]>([]);
   const [selUtmSources, setSelUtmSources] = useState<string[]>([]);
 
+  const [selectedHour, setSelectedHour] = useState<string | null>(null);
+  const [catData, setCatData] = useState<any[]>([]);
+  const [catLoading, setCatLoading] = useState(false);
+  const [prodData, setProdData] = useState<any[]>([]);
+  const [prodLoading, setProdLoading] = useState(false);
+
   const [loading, setLoading] = useState(false);
   const [chartData, setChartData] = useState<any[]>([]);
   const [kpis, setKpis] = useState({
@@ -139,7 +147,7 @@ export default function PerformancePage() {
     fetch(`${API_URL}/api/dashboard/filters`)
       .then((r) => r.json())
       .then(setFilters)
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   /* ── Helper: monta mapa hora a hora (24h) ─────────────────── */
@@ -165,18 +173,21 @@ export default function PerformancePage() {
   /* ── Fetch principal ──────────────────────────────────────── */
   const fetchData = useCallback(async () => {
     setLoading(true);
+    setCatLoading(true);
     try {
       // Params do período selecionado
       const p = new URLSearchParams({ date_from: dateFrom, date_to: dateTo });
       appendFilters(p);
 
-      // ── Busca em paralelo: dados do período + KPIs ──
-      const [revRes, kpiRes] = await Promise.all([
+      // ── Busca em paralelo: dados do período + KPIs + Categorias ──
+      const [revRes, kpiRes, catRes] = await Promise.all([
         fetch(`${API_URL}/api/dashboard/hourly-revenue?${p}`),
         fetch(`${API_URL}/api/dashboard/kpis?${p}`),
+        fetch(`${API_URL}/api/dashboard/categories-performance?${p}`)
       ]);
       const revData = await revRes.json();
       const kpiData = await kpiRes.json();
+      const catData = await catRes.json();
 
       // ── Busca dados de ontem (para o gráfico) ──
       const ydP = new URLSearchParams({
@@ -235,16 +246,38 @@ export default function PerformancePage() {
       );
 
       setKpis(kpiData);
+      setCatData(catData);
     } catch (err) {
       console.error("Erro ao buscar dados:", err);
     } finally {
       setLoading(false);
+      setCatLoading(false);
     }
   }, [dateFrom, dateTo, selChannels, selBrands, selCategories, selUtmSources]);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
+
+  const fetchTopProducts = useCallback(async () => {
+    setProdLoading(true);
+    try {
+      const p = new URLSearchParams({ date_from: dateFrom, date_to: dateTo });
+      appendFilters(p);
+      if (selectedHour) p.append("hour", selectedHour);
+      const res = await fetch(`${API_URL}/api/dashboard/top-products?${p}`);
+      const data = await res.json();
+      setProdData(data);
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setProdLoading(false);
+    }
+  }, [dateFrom, dateTo, selChannels, selBrands, selCategories, selUtmSources, selectedHour]);
+
+  useEffect(() => {
+    fetchTopProducts();
+  }, [fetchTopProducts]);
 
   /* ── Delta % ──────────────────────────────────────────────── */
   const pct = (current: number, prev: number) =>
@@ -430,6 +463,11 @@ export default function PerformancePage() {
               <LineChart
                 data={chartData}
                 margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
+                onClick={(e: any) => {
+                  if (e && e.activeLabel) {
+                    setSelectedHour(e.activeLabel);
+                  }
+                }}
               >
                 <CartesianGrid
                   strokeDasharray="4 4"
@@ -554,13 +592,23 @@ export default function PerformancePage() {
             </div>
           </div>
 
+          <div className="layout-grid">
+            <CategoryTable data={catData} loading={catLoading} />
+            <TopProductsList 
+              data={prodData} 
+              loading={prodLoading} 
+              selectedHour={selectedHour}
+              onClearHour={() => setSelectedHour(null)}
+            />
+          </div>
+
           <div
             style={{
               textAlign: "center",
               fontFamily: "Inter",
               fontSize: 11,
               color: "#D1D5DB",
-              marginTop: 8,
+              marginTop: 16,
             }}
           >
             Dados sincronizados automaticamente a cada hora · Fonte: VTEX OMS

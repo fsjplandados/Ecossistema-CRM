@@ -433,20 +433,29 @@ def run_historical_load():
                     log.info(f"  OK {batch_count}/{len(order_ids)} pedidos processados")
             except psycopg2.OperationalError as e:
                 log.error(f"  Erro de conexao: {e}. Tentando reconectar...")
-                try:
-                    conn.close()
-                except:
-                    pass
-                conn = get_conn()
-                conn.autocommit = False
-                try:
-                    upsert_order(conn, order)
-                    conn.commit()
-                    batch_count += 1
-                    total_processed += 1
-                except Exception as e2:
-                    conn.rollback()
-                    log.error(f"  Erro no pedido {order_id} apos reconectar: {e2}")
+                for retry in range(5):
+                    try:
+                        time.sleep(5)
+                        try:
+                            conn.close()
+                        except:
+                            pass
+                        conn = get_conn()
+                        conn.autocommit = False
+                        upsert_order(conn, order)
+                        conn.commit()
+                        batch_count += 1
+                        total_processed += 1
+                        log.info(f"  Reconectado com sucesso na tentativa {retry+1}")
+                        break
+                    except Exception as e2:
+                        try:
+                            conn.rollback()
+                        except:
+                            pass
+                        log.error(f"  Falha na reconexao (tentativa {retry+1}/5): {e2}")
+                else:
+                    log.error(f"  Falha critica ao tentar reconectar e salvar pedido {order_id}")
             except Exception as e:
                 try:
                     conn.rollback()

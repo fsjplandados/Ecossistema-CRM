@@ -411,3 +411,234 @@ def get_kpis(
 
     cache_set(cache_key, result, get_cache_ttl(date_from))
     return result
+
+
+# ── Performance por Categoria ─────────────────────────────────
+@app.get("/api/dashboard/categories-performance")
+def get_categories_performance(
+    date_from: str = Query(...),
+    date_to: str = Query(...),
+    channel: Optional[str] = Query(None),
+    brand: Optional[str] = Query(None),
+    category: Optional[str] = Query(None),
+    utm_source: Optional[str] = Query(None),
+    db=Depends(get_db),
+):
+    channel_v = parse_multi(channel)
+    brand_v = parse_multi(brand)
+    category_v = parse_multi(category)
+    utm_source_v = parse_multi(utm_source)
+
+    cache_key = f"cat_perf:{date_from}:{date_to}:{channel}:{brand}:{category}:{utm_source}"
+    cached = cache_get(cache_key)
+    if cached:
+        return cached
+
+    filter_conds = []
+    filter_params = []
+    add_in_condition(filter_conds, filter_params, "o.channel_type", channel_v)
+
+    mkt_join = ""
+    if utm_source_v:
+        mkt_join = "LEFT JOIN order_marketing m ON m.order_id = o.order_id"
+        add_in_condition(filter_conds, filter_params, "m.utm_source", utm_source_v)
+
+    if brand_v:
+        ph = ",".join(["%s"] * len(brand_v))
+        filter_conds.append(f"oi.brand_name IN ({ph})")
+        filter_params.extend(brand_v)
+
+    if category_v:
+        cat_parts = []
+        for cat in category_v:
+            cat_parts.append("(oi.categories_json->-1)->>'name' = %s")
+            filter_params.append(cat)
+        filter_conds.append(f"({' OR '.join(cat_parts)})" if len(cat_parts) > 1 else cat_parts[0])
+
+    extra_where = (" AND " + " AND ".join(filter_conds)) if filter_conds else ""
+
+    def run_cat_query(cur, df, dt):
+        p = [df, dt] + list(filter_params)
+        q = f"""
+            SELECT 
+                (oi.categories_json->-1)->>'name' AS cat_name,
+                SUM(oi.selling_price * oi.quantity) AS revenue,
+                SUM(oi.quantity) AS qty_sold,
+                COUNT(DISTINCT o.order_id) AS total_orders
+            FROM order_items oi
+            JOIN orders o ON o.order_id = oi.order_id
+            {mkt_join}
+            WHERE {TZ_DATE} >= %s::date AND {TZ_DATE} <= %s::date
+              AND (oi.categories_json->-1)->>'name' IS NOT NULL
+              {extra_where}
+            GROUP BY cat_name
+        """
+        cur.execute(q, p)
+        return {row["cat_name"]: row for row in cur.fetchall() if row["cat_name"]}
+
+    with db.cursor() as cur:
+        curr_data = run_cat_query(cur, date_from, date_to)
+
+        # Yesterday
+        df_obj = date_cls.fromisoformat(date_from)
+        yd_str = (df_obj - timedelta(days=1)).isoformat()
+        yd_data = run_cat_query(cur, yd_str, yd_str)
+
+        # 7d Avg
+        a7_start = (df_obj - timedelta(days=7)).isoformat()
+        a7_end = (df_obj - timedelta(days=1)).isoformat()
+        a7_data = run_cat_query(cur, a7_start, a7_end)
+
+        # Previous Month (same day approx)
+        try:
+            prev_mo_str = df_obj.replace(month=df_obj.month - 1).isoformat()
+        except ValueError:
+            prev_mo_str = (df_obj - timedelta(days=30)).isoformat()
+        pm_data = run_cat_query(cur, prev_mo_str, prev_mo_str)
+
+    results = []
+    for cat_name, row in curr_data.items():
+        rev = row["revenue"] or 0
+        qty = row["qty_sold"] or 0
+        orders = row["total_orders"] or 0
+
+        y_rev = (yd_data.get(cat_name, {}).get("revenue") or 0)
+        a7_rev = (a7_data.get(cat_name, {}).get("revenue") or 0) / 7
+        pm_rev = (pm_data.get(cat_name, {}).get("revenue") or 0)
+
+        results.append({
+            "category": cat_name,
+            "revenue": rev / 100,
+            "qty_sold": qty,
+            "avg_ticket": (rev / orders / 100) if orders > 0 else 0,
+            "items_per_order": (qty / orders) if orders > 0 else 0,
+            "avg_price": (rev / qty / 100) if qty > 0 else 0,
+            "revenue_yesterday": y_rev / 100,
+            "revenue_7d_avg": a7_rev / 100,
+            "revenue_prev_month": pm_rev / 100,
+        })
+
+    # Sort default by revenue desc
+    results.sort(key=lambda x: x["revenue"], reverse=True)
+
+    cache_set(cache_key, results, get_cache_ttl(date_from))
+    return results
+
+
+# ── Produtos Mais Vendidos ────────────────────────────────────
+@app.get("/api/dashboard/top-products")
+def get_top_products(
+    date_from: str = Query(...),
+    date_to: str = Query(...),
+    hour: Optional[str] = Query(None, description="Filtrar por hora especifica HH:00"),
+    channel: Optional[str] = Query(None),
+    brand: Optional[str] = Query(None),
+    category: Optional[str] = Query(None),
+    utm_source: Optional[str] = Query(None),
+    db=Depends(get_db),
+):
+    channel_v = parse_multi(channel)
+    brand_v = parse_multi(brand)
+    category_v = parse_multi(category)
+    utm_source_v = parse_multi(utm_source)
+
+    cache_key = f"top_prod:{date_from}:{date_to}:{hour}:{channel}:{brand}:{category}:{utm_source}"
+    cached = cache_get(cache_key)
+    if cached:
+        return cached
+
+    filter_conds = []
+    filter_params = []
+    
+    # Base date filter
+    filter_conds.append(f"{TZ_DATE} >= %s::date AND {TZ_DATE} <= %s::date")
+    filter_params.extend([date_from, date_to])
+
+    if hour:
+        # hour ex: "14:00" -> extract "14"
+        hr = hour.split(":")[0]
+        filter_conds.append(f"EXTRACT(HOUR FROM o.creation_date AT TIME ZONE '{TZ}') = %s")
+        filter_params.append(hr)
+
+    add_in_condition(filter_conds, filter_params, "o.channel_type", channel_v)
+
+    mkt_join = ""
+    if utm_source_v:
+        mkt_join = "LEFT JOIN order_marketing m ON m.order_id = o.order_id"
+        add_in_condition(filter_conds, filter_params, "m.utm_source", utm_source_v)
+
+    if brand_v:
+        ph = ",".join(["%s"] * len(brand_v))
+        filter_conds.append(f"oi.brand_name IN ({ph})")
+        filter_params.extend(brand_v)
+
+    if category_v:
+        cat_parts = []
+        for cat in category_v:
+            cat_parts.append("(oi.categories_json->-1)->>'name' = %s")
+            filter_params.append(cat)
+        filter_conds.append(f"({' OR '.join(cat_parts)})" if len(cat_parts) > 1 else cat_parts[0])
+
+    where_clause = " AND ".join(filter_conds)
+
+    q = f"""
+        SELECT 
+            oi.product_id,
+            oi.name,
+            MAX(oi.image_url) AS image_url,
+            SUM(oi.selling_price * oi.quantity) AS revenue,
+            SUM(oi.quantity) AS qty_sold
+        FROM order_items oi
+        JOIN orders o ON o.order_id = oi.order_id
+        {mkt_join}
+        WHERE {where_clause}
+        GROUP BY oi.product_id, oi.name
+        ORDER BY revenue DESC
+        LIMIT 50
+    """
+
+    with db.cursor() as cur:
+        cur.execute(q, filter_params)
+        curr_rows = cur.fetchall()
+        
+        # Calculate overall total revenue for % calc
+        cur.execute(f"SELECT SUM(oi.selling_price * oi.quantity) as total FROM order_items oi JOIN orders o ON o.order_id = oi.order_id {mkt_join} WHERE {where_clause}", filter_params)
+        total_rev = (cur.fetchone()["total"] or 0) / 100
+
+        # Yesterday comparison for the arrow indicators
+        df_obj = date_cls.fromisoformat(date_from)
+        yd_str = (df_obj - timedelta(days=1)).isoformat()
+        
+        yd_params = list(filter_params)
+        # replace date_from and date_to with yesterday
+        yd_params[0] = yd_str
+        yd_params[1] = yd_str
+        
+        y_q = f"""
+            SELECT oi.product_id, SUM(oi.selling_price * oi.quantity) AS revenue
+            FROM order_items oi
+            JOIN orders o ON o.order_id = oi.order_id
+            {mkt_join}
+            WHERE {where_clause}
+            GROUP BY oi.product_id
+        """
+        cur.execute(y_q, yd_params)
+        yd_rows = {row["product_id"]: row["revenue"] for row in cur.fetchall()}
+
+    results = []
+    for row in curr_rows:
+        rev = (row["revenue"] or 0) / 100
+        y_rev = (yd_rows.get(row["product_id"]) or 0) / 100
+        
+        results.append({
+            "product_id": row["product_id"],
+            "name": row["name"],
+            "image_url": row["image_url"],
+            "revenue": rev,
+            "qty_sold": row["qty_sold"] or 0,
+            "participation_pct": (rev / total_rev * 100) if total_rev > 0 else 0,
+            "revenue_yesterday": y_rev
+        })
+
+    cache_set(cache_key, results, get_cache_ttl(date_from))
+    return results
