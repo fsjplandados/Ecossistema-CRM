@@ -16,13 +16,15 @@ interface TopProductsListProps {
   data: TopProduct[];
   loading: boolean;
   selectedHour: string | null;
+  selectedCategory?: string | null;
   onClearHour: () => void;
+  onClearCategory?: () => void;
 }
 
 const fmtBRL = (v: number) =>
   v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
-export default function TopProductsList({ data, loading, selectedHour, onClearHour }: TopProductsListProps) {
+export default function TopProductsList({ data, loading, selectedHour, selectedCategory, onClearHour, onClearCategory }: TopProductsListProps) {
   const [sortBy, setSortBy] = useState<"revenue" | "qty">("revenue");
 
   const sortedData = [...data].sort((a, b) => {
@@ -41,6 +43,11 @@ export default function TopProductsList({ data, loading, selectedHour, onClearHo
                 às {selectedHour}
               </span>
             )}
+            {selectedCategory && (
+              <div style={{ fontSize: 13, color: "#6B7280", marginTop: 2, fontWeight: 500 }}>
+                Categoria: <span style={{ color: "var(--blue-primary)" }}>{selectedCategory}</span>
+              </div>
+            )}
           </h3>
           <select 
             className="filter-select"
@@ -52,11 +59,18 @@ export default function TopProductsList({ data, loading, selectedHour, onClearHo
             <option value="qty">Quantidade</option>
           </select>
         </div>
-        {selectedHour && (
-          <button onClick={onClearHour} style={{ fontSize: 11, background: 'none', border: 'none', color: '#EF4444', cursor: 'pointer', padding: 0 }}>
-            ✖ Limpar filtro de hora
-          </button>
-        )}
+        <div style={{ display: 'flex', gap: 12 }}>
+          {selectedHour && (
+            <button onClick={onClearHour} style={{ fontSize: 11, background: 'none', border: 'none', color: '#EF4444', cursor: 'pointer', padding: 0 }}>
+              ✖ Limpar hora
+            </button>
+          )}
+          {selectedCategory && onClearCategory && (
+            <button onClick={onClearCategory} style={{ fontSize: 11, background: 'none', border: 'none', color: '#EF4444', cursor: 'pointer', padding: 0 }}>
+              ✖ Limpar categoria
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="product-list-container">

@@ -339,14 +339,18 @@ def get_kpis(
     brand: Optional[str] = Query(None),
     category: Optional[str] = Query(None),
     utm_source: Optional[str] = Query(None),
+    utm_campaign: Optional[str] = Query(None),
+    utm_medium: Optional[str] = Query(None),
     db=Depends(get_db),
 ):
     channel_v = parse_multi(channel)
     brand_v = parse_multi(brand)
     category_v = parse_multi(category)
     utm_source_v = parse_multi(utm_source)
+    utm_campaign_v = parse_multi(utm_campaign)
+    utm_medium_v = parse_multi(utm_medium)
 
-    cache_key = f"kpis:{date_from}:{date_to}:{channel}:{brand}:{category}:{utm_source}"
+    cache_key = f"kpis:{date_from}:{date_to}:{channel}:{brand}:{category}:{utm_source}:{utm_campaign}:{utm_medium}"
     cached = cache_get(cache_key)
     if cached:
         return cached
@@ -357,9 +361,11 @@ def get_kpis(
     add_in_condition(filter_conds, filter_params, "o.channel_type", channel_v)
 
     mkt_join = ""
-    if utm_source_v:
+    if utm_source_v or utm_campaign_v or utm_medium_v:
         mkt_join = "LEFT JOIN order_marketing m ON m.order_id = o.order_id"
         add_in_condition(filter_conds, filter_params, "m.utm_source", utm_source_v)
+        add_in_condition(filter_conds, filter_params, "m.utm_campaign", utm_campaign_v)
+        add_in_condition(filter_conds, filter_params, "m.utm_medium", utm_medium_v)
 
     item_sub, item_p = build_item_subquery(brand_v, category_v)
     if item_sub:
@@ -422,14 +428,18 @@ def get_categories_performance(
     brand: Optional[str] = Query(None),
     category: Optional[str] = Query(None),
     utm_source: Optional[str] = Query(None),
+    utm_campaign: Optional[str] = Query(None),
+    utm_medium: Optional[str] = Query(None),
     db=Depends(get_db),
 ):
     channel_v = parse_multi(channel)
     brand_v = parse_multi(brand)
     category_v = parse_multi(category)
     utm_source_v = parse_multi(utm_source)
+    utm_campaign_v = parse_multi(utm_campaign)
+    utm_medium_v = parse_multi(utm_medium)
 
-    cache_key = f"cat_perf:{date_from}:{date_to}:{channel}:{brand}:{category}:{utm_source}"
+    cache_key = f"cat_perf:{date_from}:{date_to}:{channel}:{brand}:{category}:{utm_source}:{utm_campaign}:{utm_medium}"
     cached = cache_get(cache_key)
     if cached:
         return cached
@@ -439,9 +449,11 @@ def get_categories_performance(
     add_in_condition(filter_conds, filter_params, "o.channel_type", channel_v)
 
     mkt_join = ""
-    if utm_source_v:
+    if utm_source_v or utm_campaign_v or utm_medium_v:
         mkt_join = "LEFT JOIN order_marketing m ON m.order_id = o.order_id"
         add_in_condition(filter_conds, filter_params, "m.utm_source", utm_source_v)
+        add_in_condition(filter_conds, filter_params, "m.utm_campaign", utm_campaign_v)
+        add_in_condition(filter_conds, filter_params, "m.utm_medium", utm_medium_v)
 
     if brand_v:
         ph = ",".join(["%s"] * len(brand_v))
@@ -502,20 +514,53 @@ def get_categories_performance(
         qty = row["qty_sold"] or 0
         orders = row["total_orders"] or 0
 
-        y_rev = (yd_data.get(cat_name, {}).get("revenue") or 0)
-        a7_rev = (a7_data.get(cat_name, {}).get("revenue") or 0) / 7
-        pm_rev = (pm_data.get(cat_name, {}).get("revenue") or 0)
+        # YD
+        yd_row = yd_data.get(cat_name, {})
+        y_rev = yd_row.get("revenue") or 0
+        y_qty = yd_row.get("qty_sold") or 0
+        y_orders = yd_row.get("total_orders") or 0
+
+        # 7D
+        a7_row = a7_data.get(cat_name, {})
+        a7_rev = (a7_row.get("revenue") or 0) / 7
+        a7_qty = (a7_row.get("qty_sold") or 0) / 7
+        a7_orders = (a7_row.get("total_orders") or 0) / 7
+
+        # PM
+        pm_row = pm_data.get(cat_name, {})
+        pm_rev = pm_row.get("revenue") or 0
+        pm_qty = pm_row.get("qty_sold") or 0
+        pm_orders = pm_row.get("total_orders") or 0
 
         results.append({
             "category": cat_name,
             "revenue": rev / 100,
             "qty_sold": qty,
+            "total_orders": orders,
             "avg_ticket": (rev / orders / 100) if orders > 0 else 0,
             "items_per_order": (qty / orders) if orders > 0 else 0,
             "avg_price": (rev / qty / 100) if qty > 0 else 0,
-            "revenue_yesterday": y_rev / 100,
-            "revenue_7d_avg": a7_rev / 100,
-            "revenue_prev_month": pm_rev / 100,
+            
+            "yd_revenue": y_rev / 100,
+            "yd_qty": y_qty,
+            "yd_orders": y_orders,
+            "yd_avg_ticket": (y_rev / y_orders / 100) if y_orders > 0 else 0,
+            "yd_items_per_order": (y_qty / y_orders) if y_orders > 0 else 0,
+            "yd_avg_price": (y_rev / y_qty / 100) if y_qty > 0 else 0,
+
+            "a7_revenue": a7_rev / 100,
+            "a7_qty": a7_qty,
+            "a7_orders": a7_orders,
+            "a7_avg_ticket": (a7_rev / a7_orders / 100) if a7_orders > 0 else 0,
+            "a7_items_per_order": (a7_qty / a7_orders) if a7_orders > 0 else 0,
+            "a7_avg_price": (a7_rev / a7_qty / 100) if a7_qty > 0 else 0,
+
+            "pm_revenue": pm_rev / 100,
+            "pm_qty": pm_qty,
+            "pm_orders": pm_orders,
+            "pm_avg_ticket": (pm_rev / pm_orders / 100) if pm_orders > 0 else 0,
+            "pm_items_per_order": (pm_qty / pm_orders) if pm_orders > 0 else 0,
+            "pm_avg_price": (pm_rev / pm_qty / 100) if pm_qty > 0 else 0,
         })
 
     # Sort default by revenue desc
@@ -535,14 +580,18 @@ def get_top_products(
     brand: Optional[str] = Query(None),
     category: Optional[str] = Query(None),
     utm_source: Optional[str] = Query(None),
+    utm_campaign: Optional[str] = Query(None),
+    utm_medium: Optional[str] = Query(None),
     db=Depends(get_db),
 ):
     channel_v = parse_multi(channel)
     brand_v = parse_multi(brand)
     category_v = parse_multi(category)
     utm_source_v = parse_multi(utm_source)
+    utm_campaign_v = parse_multi(utm_campaign)
+    utm_medium_v = parse_multi(utm_medium)
 
-    cache_key = f"top_prod:{date_from}:{date_to}:{hour}:{channel}:{brand}:{category}:{utm_source}"
+    cache_key = f"top_prod:{date_from}:{date_to}:{hour}:{channel}:{brand}:{category}:{utm_source}:{utm_campaign}:{utm_medium}"
     cached = cache_get(cache_key)
     if cached:
         return cached
@@ -563,9 +612,11 @@ def get_top_products(
     add_in_condition(filter_conds, filter_params, "o.channel_type", channel_v)
 
     mkt_join = ""
-    if utm_source_v:
+    if utm_source_v or utm_campaign_v or utm_medium_v:
         mkt_join = "LEFT JOIN order_marketing m ON m.order_id = o.order_id"
         add_in_condition(filter_conds, filter_params, "m.utm_source", utm_source_v)
+        add_in_condition(filter_conds, filter_params, "m.utm_campaign", utm_campaign_v)
+        add_in_condition(filter_conds, filter_params, "m.utm_medium", utm_medium_v)
 
     if brand_v:
         ph = ",".join(["%s"] * len(brand_v))

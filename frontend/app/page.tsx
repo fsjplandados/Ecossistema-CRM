@@ -113,6 +113,10 @@ export default function PerformancePage() {
   const [selBrands, setSelBrands] = useState<string[]>([]);
   const [selCategories, setSelCategories] = useState<string[]>([]);
   const [selUtmSources, setSelUtmSources] = useState<string[]>([]);
+  const [selUtmCampaigns, setSelUtmCampaigns] = useState<string[]>([]);
+  const [selUtmMediums, setSelUtmMediums] = useState<string[]>([]);
+
+  const [selectedCategoryRow, setSelectedCategoryRow] = useState<string | null>(null);
 
   const [selectedHour, setSelectedHour] = useState<string | null>(null);
   const [catData, setCatData] = useState<any[]>([]);
@@ -140,6 +144,8 @@ export default function PerformancePage() {
     brands: [],
     categories: [],
     utm_sources: [],
+    utm_campaigns: [],
+    utm_mediums: [],
   });
 
   /* ── Carrega filtros disponíveis ──────────────────────────── */
@@ -168,6 +174,8 @@ export default function PerformancePage() {
     if (selBrands.length) p.append("brand", selBrands.join(","));
     if (selCategories.length) p.append("category", selCategories.join(","));
     if (selUtmSources.length) p.append("utm_source", selUtmSources.join(","));
+    if (selUtmCampaigns.length) p.append("utm_campaign", selUtmCampaigns.join(","));
+    if (selUtmMediums.length) p.append("utm_medium", selUtmMediums.join(","));
   };
 
   /* ── Fetch principal ──────────────────────────────────────── */
@@ -253,7 +261,7 @@ export default function PerformancePage() {
       setLoading(false);
       setCatLoading(false);
     }
-  }, [dateFrom, dateTo, selChannels, selBrands, selCategories, selUtmSources]);
+  }, [dateFrom, dateTo, selChannels, selBrands, selCategories, selUtmSources, selUtmCampaigns, selUtmMediums]);
 
   useEffect(() => {
     fetchData();
@@ -265,6 +273,7 @@ export default function PerformancePage() {
       const p = new URLSearchParams({ date_from: dateFrom, date_to: dateTo });
       appendFilters(p);
       if (selectedHour) p.append("hour", selectedHour);
+      if (selectedCategoryRow) p.append("category", selectedCategoryRow);
       const res = await fetch(`${API_URL}/api/dashboard/top-products?${p}`);
       const data = await res.json();
       setProdData(data);
@@ -273,7 +282,7 @@ export default function PerformancePage() {
     } finally {
       setProdLoading(false);
     }
-  }, [dateFrom, dateTo, selChannels, selBrands, selCategories, selUtmSources, selectedHour]);
+  }, [dateFrom, dateTo, selChannels, selBrands, selCategories, selUtmSources, selUtmCampaigns, selUtmMediums, selectedHour, selectedCategoryRow]);
 
   useEffect(() => {
     fetchTopProducts();
@@ -355,6 +364,20 @@ export default function PerformancePage() {
               onChange={setSelUtmSources}
               placeholder="Todos"
             />
+            <MultiSelectFilter
+              label="UTM Campaign"
+              options={filters.utm_campaigns || []}
+              selected={selUtmCampaigns}
+              onChange={setSelUtmCampaigns}
+              placeholder="Todas"
+            />
+            <MultiSelectFilter
+              label="UTM Medium"
+              options={filters.utm_mediums || []}
+              selected={selUtmMediums}
+              onChange={setSelUtmMediums}
+              placeholder="Todos"
+            />
             <button
               className="btn-apply"
               onClick={fetchData}
@@ -383,6 +406,10 @@ export default function PerformancePage() {
                 setSelBrands([]);
                 setSelCategories([]);
                 setSelUtmSources([]);
+                setSelUtmCampaigns([]);
+                setSelUtmMediums([]);
+                setSelectedHour(null);
+                setSelectedCategoryRow(null);
               }}
             >
               Limpar
@@ -593,12 +620,18 @@ export default function PerformancePage() {
           </div>
 
           <div className="layout-grid">
-            <CategoryTable data={catData} loading={catLoading} />
+            <CategoryTable 
+              data={catData} 
+              loading={catLoading} 
+              onSelectCategory={setSelectedCategoryRow}
+            />
             <TopProductsList 
               data={prodData} 
               loading={prodLoading} 
               selectedHour={selectedHour}
+              selectedCategory={selectedCategoryRow}
               onClearHour={() => setSelectedHour(null)}
+              onClearCategory={() => setSelectedCategoryRow(null)}
             />
           </div>
 

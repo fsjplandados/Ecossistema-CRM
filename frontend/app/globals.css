@@ -795,8 +795,55 @@ html, body {
   margin-top: 20px;
 }
 
+.layout-grid > * {
+  min-width: 0;
+}
+
 @media (max-width: 1024px) {
   .layout-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ── VTEX Style Table ────────────────────────────────────── */
+.vtex-style-table {
+  overflow-x: auto;
+}
+
+.vtex-style-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.vtex-style-table th {
+  border-bottom: 2px solid #E5E7EB;
+  color: #6B7280;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 12px 16px;
+}
+
+.vtex-style-table td {
+  border-bottom: 1px solid #E5E7EB;
+  padding: 16px;
+  font-family: 'Inter', sans-serif;
+  vertical-align: top;
+}
+
+.vtex-style-table tr:last-child td {
+  border-bottom: none;
+}
+
+.vtex-style-table tr.total-row {
+  background-color: #f9fafb;
+}
+
+.vtex-style-table tr.total-row td {
+  border-bottom: 2px solid #E5E7EB;
+  border-top: 2px solid #E5E7EB;
+}
+
+.vtex-style-table tr.interactive-row:hover {
+  background-color: #f3f4f6;
+  transition: background-color 0.15s;
 }
