@@ -115,8 +115,12 @@ export default function PerformancePage() {
   const [selUtmSources, setSelUtmSources] = useState<string[]>([]);
   const [selUtmCampaigns, setSelUtmCampaigns] = useState<string[]>([]);
   const [selUtmMediums, setSelUtmMediums] = useState<string[]>([]);
+  const [selUtmiParts, setSelUtmiParts] = useState<string[]>([]);
 
   const [selectedCategoryRow, setSelectedCategoryRow] = useState<string | null>(null);
+  const [drillDownData, setDrillDownData] = useState<any[]>([]);
+  const [drillDownLoading, setDrillDownLoading] = useState(false);
+  const [syncTime, setSyncTime] = useState<string | null>(null);
 
   const [selectedHour, setSelectedHour] = useState<string | null>(null);
   const [catData, setCatData] = useState<any[]>([]);
@@ -146,6 +150,7 @@ export default function PerformancePage() {
     utm_sources: [],
     utm_campaigns: [],
     utm_mediums: [],
+    utmi_parts: [],
   });
 
   /* ── Carrega filtros disponíveis ──────────────────────────── */
@@ -176,6 +181,7 @@ export default function PerformancePage() {
     if (selUtmSources.length) p.append("utm_source", selUtmSources.join(","));
     if (selUtmCampaigns.length) p.append("utm_campaign", selUtmCampaigns.join(","));
     if (selUtmMediums.length) p.append("utm_medium", selUtmMediums.join(","));
+    if (selUtmiParts.length) p.append("utmi_part", selUtmiParts.join(","));
   };
 
   /* ── Fetch principal ──────────────────────────────────────── */
@@ -253,6 +259,12 @@ export default function PerformancePage() {
         }))
       );
 
+      // Fetch Sync Status
+      fetch(`${API_URL}/api/sync/status`)
+        .then(r => r.json())
+        .then(data => setSyncTime(data.last_run_time))
+        .catch(() => {});
+
       setKpis(kpiData);
       setCatData(catData);
     } catch (err) {
@@ -261,7 +273,7 @@ export default function PerformancePage() {
       setLoading(false);
       setCatLoading(false);
     }
-  }, [dateFrom, dateTo, selChannels, selBrands, selCategories, selUtmSources, selUtmCampaigns, selUtmMediums]);
+  }, [dateFrom, dateTo, selChannels, selBrands, selCategories, selUtmSources, selUtmCampaigns, selUtmMediums, selUtmiParts]);
 
   useEffect(() => {
     fetchData();
@@ -273,7 +285,6 @@ export default function PerformancePage() {
       const p = new URLSearchParams({ date_from: dateFrom, date_to: dateTo });
       appendFilters(p);
       if (selectedHour) p.append("hour", selectedHour);
-      if (selectedCategoryRow) p.append("category", selectedCategoryRow);
       const res = await fetch(`${API_URL}/api/dashboard/top-products?${p}`);
       const data = await res.json();
       setProdData(data);
@@ -282,11 +293,32 @@ export default function PerformancePage() {
     } finally {
       setProdLoading(false);
     }
-  }, [dateFrom, dateTo, selChannels, selBrands, selCategories, selUtmSources, selUtmCampaigns, selUtmMediums, selectedHour, selectedCategoryRow]);
+  }, [dateFrom, dateTo, selChannels, selBrands, selCategories, selUtmSources, selUtmCampaigns, selUtmMediums, selUtmiParts, selectedHour]);
 
   useEffect(() => {
     fetchTopProducts();
   }, [fetchTopProducts]);
+
+  const fetchDrillDown = useCallback(async () => {
+    if (!selectedCategoryRow) return;
+    setDrillDownLoading(true);
+    try {
+      const p = new URLSearchParams({ date_from: dateFrom, date_to: dateTo });
+      appendFilters(p);
+      p.append("category", selectedCategoryRow);
+      const res = await fetch(`${API_URL}/api/dashboard/products-performance?${p}`);
+      const data = await res.json();
+      setDrillDownData(data);
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setDrillDownLoading(false);
+    }
+  }, [dateFrom, dateTo, selChannels, selBrands, selCategories, selUtmSources, selUtmCampaigns, selUtmMediums, selUtmiParts, selectedCategoryRow]);
+
+  useEffect(() => {
+    fetchDrillDown();
+  }, [fetchDrillDown]);
 
   /* ── Delta % ──────────────────────────────────────────────── */
   const pct = (current: number, prev: number) =>
@@ -378,6 +410,13 @@ export default function PerformancePage() {
               onChange={setSelUtmMediums}
               placeholder="Todos"
             />
+            <MultiSelectFilter
+              label="UTMI Part"
+              options={filters.utmi_parts || []}
+              selected={selUtmiParts}
+              onChange={setSelUtmiParts}
+              placeholder="Todos"
+            />
             <button
               className="btn-apply"
               onClick={fetchData}
@@ -408,6 +447,7 @@ export default function PerformancePage() {
                 setSelUtmSources([]);
                 setSelUtmCampaigns([]);
                 setSelUtmMediums([]);
+                setSelUtmiParts([]);
                 setSelectedHour(null);
                 setSelectedCategoryRow(null);
               }}
@@ -620,18 +660,25 @@ export default function PerformancePage() {
           </div>
 
           <div className="layout-grid">
-            <CategoryTable 
-              data={catData} 
-              loading={catLoading} 
-              onSelectCategory={setSelectedCategoryRow}
-            />
+            {selectedCategoryRow ? (
+              <CategoryTable 
+                data={drillDownData} 
+                loading={drillDownLoading} 
+                isProductMode={true}
+                onBack={() => setSelectedCategoryRow(null)}
+              />
+            ) : (
+              <CategoryTable 
+                data={catData} 
+                loading={catLoading} 
+                onSelectCategory={setSelectedCategoryRow}
+              />
+            )}
             <TopProductsList 
               data={prodData} 
               loading={prodLoading} 
               selectedHour={selectedHour}
-              selectedCategory={selectedCategoryRow}
               onClearHour={() => setSelectedHour(null)}
-              onClearCategory={() => setSelectedCategoryRow(null)}
             />
           </div>
 
@@ -645,6 +692,11 @@ export default function PerformancePage() {
             }}
           >
             Dados sincronizados automaticamente a cada hora · Fonte: VTEX OMS
+            {syncTime && (
+              <div style={{ marginTop: 4 }}>
+                Atualizado às {new Date(syncTime).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}
+              </div>
+            )}
           </div>
         </div>
       </div>

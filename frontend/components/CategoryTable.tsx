@@ -37,6 +37,8 @@ interface CategoryTableProps {
   data: CategoryData[];
   loading: boolean;
   onSelectCategory?: (category: string) => void;
+  isProductMode?: boolean;
+  onBack?: () => void;
 }
 
 const fmtBRL = (v: number) =>
@@ -44,7 +46,7 @@ const fmtBRL = (v: number) =>
 const fmtNum = (v: number) =>
   v.toLocaleString("pt-BR", { maximumFractionDigits: 2 });
 
-export default function CategoryTable({ data, loading, onSelectCategory }: CategoryTableProps) {
+export default function CategoryTable({ data, loading, onSelectCategory, isProductMode, onBack }: CategoryTableProps) {
   const [sortCol, setSortCol] = useState<keyof CategoryData>("revenue");
   const [sortDesc, setSortDesc] = useState(true);
   const [comparePeriod, setComparePeriod] = useState<"yesterday" | "7d" | "prev_month">("yesterday");
@@ -109,7 +111,20 @@ export default function CategoryTable({ data, loading, onSelectCategory }: Categ
   return (
     <div className="table-card">
       <div className="table-header">
-        <h3 className="table-title">Performance por Categoria</h3>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          {isProductMode && onBack && (
+            <button 
+              onClick={onBack} 
+              style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 20, color: '#6B7280', padding: 0 }}
+              title="Voltar para categorias"
+            >
+              ←
+            </button>
+          )}
+          <h3 className="table-title">
+            {isProductMode ? "Performance por Produto" : "Performance por Categoria"}
+          </h3>
+        </div>
         <div className="table-actions">
           <span style={{ fontSize: 12, color: "#6B7280" }}>Comparar com:</span>
           <select 
@@ -135,7 +150,9 @@ export default function CategoryTable({ data, loading, onSelectCategory }: Categ
           <table className="data-table">
             <thead>
               <tr>
-                <th onClick={() => handleSort("category")} style={{ textAlign: "left" }}>Categoria <SortIcon col="category"/></th>
+                <th onClick={() => handleSort("category")} style={{ textAlign: "left" }}>
+                  {isProductMode ? "Nome do produto / SKU" : "Categoria"} <SortIcon col="category"/>
+                </th>
                 <th onClick={() => handleSort("revenue")} style={{ textAlign: "right" }}>Receita (captada) <SortIcon col="revenue"/></th>
                 <th onClick={() => handleSort("total_orders")} style={{ textAlign: "right" }}>Pedidos (captados) <SortIcon col="total_orders"/></th>
                 <th onClick={() => handleSort("avg_ticket")} style={{ textAlign: "right" }}>Ticket médio (captado) <SortIcon col="avg_ticket"/></th>
@@ -189,12 +206,12 @@ export default function CategoryTable({ data, loading, onSelectCategory }: Categ
               {sortedData.map((item, idx) => (
                 <tr 
                   key={idx} 
-                  onClick={() => onSelectCategory && onSelectCategory(item.category)}
-                  style={{ cursor: onSelectCategory ? "pointer" : "default" }}
-                  className="interactive-row"
+                  onClick={() => !isProductMode && onSelectCategory && onSelectCategory(item.category)}
+                  style={{ cursor: (!isProductMode && onSelectCategory) ? "pointer" : "default" }}
+                  className={!isProductMode ? "interactive-row" : ""}
                 >
-                  <td className="font-medium" style={{ color: "#3B82F6" }}>
-                    {idx + 1}. {item.category || "Sem categoria"}
+                  <td className="font-medium" style={{ color: !isProductMode ? "#3B82F6" : "#4B5563" }}>
+                    {isProductMode ? item.category : `${idx + 1}. ${item.category || "Sem categoria"}`}
                   </td>
                   <td>{renderCell(item.revenue, item, "revenue", true)}</td>
                   <td>{renderCell(item.total_orders, item, "orders")}</td>
