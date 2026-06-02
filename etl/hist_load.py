@@ -408,11 +408,11 @@ def run_historical_load():
     end_date = datetime.now(timezone.utc)
     total_processed = 0
 
-    # Iterar mês a mês do mais recente ao mais antigo
+    # Iterar DIA a DIA do mais recente ao mais antigo (evita limite de 30 páginas)
     current_end = end_date
     while current_end > start_date:
-        current_start = max(current_end - relativedelta(months=1), start_date)
-        log.info(f"\nJanela: {current_start.strftime('%Y-%m-%d')} -> {current_end.strftime('%Y-%m-%d')}")
+        current_start = max(current_end - timedelta(days=1), start_date)
+        log.info(f"\nJanela: {current_start.strftime('%Y-%m-%d %H:%M')} -> {current_end.strftime('%Y-%m-%d %H:%M')}")
 
         order_ids = list_orders_by_window(current_start, current_end)
         log.info(f"  {len(order_ids)} pedidos encontrados na janela")
