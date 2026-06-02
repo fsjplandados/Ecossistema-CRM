@@ -35,7 +35,7 @@ export default function Header() {
           width={160}
           height={50}
           priority
-          style={{ objectFit: "contain", height: 46, width: "auto", filter: "brightness(0) invert(1)" }}
+          style={{ objectFit: "contain", height: 46, width: "auto" }}
         />
         <div style={{ borderLeft: "1px solid rgba(255,255,255,0.25)", paddingLeft: 16, marginLeft: 4 }}>
           <div className="header-title">Eco CRM</div>
