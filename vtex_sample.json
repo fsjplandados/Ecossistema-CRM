@@ -1,0 +1,3585 @@
+{
+    "orderId": "1636476312133-01",
+    "sequence": "6312133",
+    "marketplaceOrderId": "",
+    "marketplaceServicesEndpoint": null,
+    "sellerOrderId": "SLR-1636476312133-01",
+    "origin": "Marketplace",
+    "affiliateId": "",
+    "salesChannel": "1",
+    "merchantName": null,
+    "status": "payment-approved",
+    "workflowIsInError": false,
+    "statusDescription": "Pagamento Aprovado",
+    "value": 13047,
+    "creationDate": "2026-06-01T22:50:40.6725786+00:00",
+    "lastChange": "2026-06-01T22:50:52.3797710+00:00",
+    "orderGroup": "1636476312133",
+    "followUpEmail": "74a5ad02caf648bbb471ba2d9c7053e3@ct.vtex.com.br",
+    "lastMessage": null,
+    "hostname": "sjdigital",
+    "isCompleted": true,
+    "roundingError": 0,
+    "orderFormId": "4b07af1f0d094e6aa89d6c36d6db6c3c",
+    "allowCancellation": true,
+    "allowEdition": false,
+    "isCheckedIn": false,
+    "authorizedDate": "2026-06-01T22:50:47.5809417+00:00",
+    "invoicedDate": null,
+    "cancelReason": null,
+    "checkedInPickupPointId": null,
+    "totals": [
+        {
+            "id": "Items",
+            "name": "Total dos Itens",
+            "value": 13457
+        },
+        {
+            "id": "Discounts",
+            "name": "Total dos Descontos",
+            "value": -1000
+        },
+        {
+            "id": "Shipping",
+            "name": "Total do Frete",
+            "value": 590
+        },
+        {
+            "id": "Tax",
+            "name": "Total da Taxa",
+            "value": 0
+        }
+    ],
+    "sellers": [
+        {
+            "id": "sjdigital0709",
+            "name": "CANELA 3 - 88212113067603 - 0709",
+            "logo": "",
+            "fulfillmentEndpoint": "http://fulfillment.vtexcommerce.com.br/api/fulfillment?an=sjdigital0709&affiliateId=SLR&sc=1"
+        }
+    ],
+    "clientPreferencesData": {
+        "locale": "pt-BR",
+        "optinNewsLetter": true
+    },
+    "cancellationData": null,
+    "taxData": null,
+    "subscriptionData": null,
+    "itemMetadata": {
+        "Items": [
+            {
+                "Id": "35668",
+                "Seller": "1",
+                "Name": "Analgésico Ketalgi 500mg 14 Comprimidos Revestidos Supera KETALGI 500MG 14CP REV SUPERA",
+                "SkuName": "KETALGI 500MG 14CP REV SUPERA",
+                "ProductId": "1258602",
+                "RefId": "10044471",
+                "Ean": "7899420508981",
+                "ImageUrl": "https://sjdigital.vteximg.com.br/arquivos/ids/1126612-90-90/analgesico-ketalgi-500mg-14-comprimidos-revestidos-supera-10044471_1.jpg?v=638732544865030000",
+                "DetailUrl": "/analgesico-ketalgi-500mg-14-comprimidos-revestidos-supera-10044471/p",
+                "AssemblyOptions": [
+                    {
+                        "Id": "vtex.subscription.assinatura",
+                        "Name": "vtex.subscription.assinatura",
+                        "Required": false,
+                        "InputValues": {
+                            "vtex.subscription.key.frequency": {
+                                "MaximumNumberOfCharacters": 7,
+                                "Domain": [
+                                    "10 day",
+                                    " 15 day",
+                                    " 30 day",
+                                    " 60 day",
+                                    " 90 day"
+                                ]
+                            }
+                        },
+                        "Composition": null
+                    }
+                ]
+            },
+            {
+                "Id": "4052",
+                "Seller": "1",
+                "Name": "Acetilcisteína EMS 600mg Granulado Sabor Laranja 16 Envelopes Genérico ACETILCISTEINA 600MG",
+                "SkuName": "ACETILCISTEINA 600MG",
+                "ProductId": "4035",
+                "RefId": "10085927",
+                "Ean": "7896004713342",
+                "ImageUrl": "https://sjdigital.vteximg.com.br/arquivos/ids/1185135-90-90/10085927_1.jpg?v=639116953380900000",
+                "DetailUrl": "/acetilcisteina-ems-600mg-granulado-sabor-laranja-16-envelopes-generico-10085927/p",
+                "AssemblyOptions": [
+                    {
+                        "Id": "vtex.subscription.assinatura",
+                        "Name": "vtex.subscription.assinatura",
+                        "Required": false,
+                        "InputValues": {
+                            "vtex.subscription.key.frequency": {
+                                "MaximumNumberOfCharacters": 7,
+                                "Domain": [
+                                    "10 day",
+                                    " 15 day",
+                                    " 30 day",
+                                    " 60 day",
+                                    " 90 day"
+                                ]
+                            }
+                        },
+                        "Composition": null
+                    }
+                ]
+            },
+            {
+                "Id": "6591",
+                "Seller": "1",
+                "Name": "Desodorante Aerossol Above Women Sport Energy 150ml DES ABOVE AERO 150ML",
+                "SkuName": "DES ABOVE AERO 150ML",
+                "ProductId": "6564",
+                "RefId": "10004938",
+                "Ean": "7899674022004",
+                "ImageUrl": "https://sjdigital.vteximg.com.br/arquivos/ids/802866-90-90/desodorante-aerossol-above-women-sport-energy-150ml-10004938_1.jpg?v=639021048636930000",
+                "DetailUrl": "/desodorante-aerossol-above-women-sport-energy-150ml-10004938/p",
+                "AssemblyOptions": [
+                    {
+                        "Id": "vtex.subscription.assinatura",
+                        "Name": "vtex.subscription.assinatura",
+                        "Required": false,
+                        "InputValues": {
+                            "vtex.subscription.key.frequency": {
+                                "MaximumNumberOfCharacters": 7,
+                                "Domain": [
+                                    "10 day",
+                                    " 15 day",
+                                    " 30 day",
+                                    " 60 day",
+                                    " 90 day"
+                                ]
+                            }
+                        },
+                        "Composition": null
+                    }
+                ]
+            },
+            {
+                "Id": "22181",
+                "Seller": "1",
+                "Name": "Desodorante Antitranspirante Aerossol Dove Men+Care Invisible Dry 250ml DES DOVE AERO 250ML MEN+CARE INVISIBLE",
+                "SkuName": "DES DOVE AERO 250ML MEN+CARE INVISIBLE",
+                "ProductId": "1245031",
+                "RefId": "10031250",
+                "Ean": "7891150081222",
+                "ImageUrl": "https://sjdigital.vteximg.com.br/arquivos/ids/1161871-90-90/desodorante-antitranspirante-aerossol-dove-mencare-invisible-dry-250ml-10031250_1.jpg?v=639047843051700000",
+                "DetailUrl": "/desodorante-antitranspirante-aerossol-dove-mencare-invisible-dry-250ml-10031250/p",
+                "AssemblyOptions": [
+                    {
+                        "Id": "vtex.subscription.assinatura",
+                        "Name": "vtex.subscription.assinatura",
+                        "Required": false,
+                        "InputValues": {
+                            "vtex.subscription.key.frequency": {
+                                "MaximumNumberOfCharacters": 7,
+                                "Domain": [
+                                    "10 day",
+                                    " 15 day",
+                                    " 30 day",
+                                    " 60 day",
+                                    " 90 day"
+                                ]
+                            }
+                        },
+                        "Composition": null
+                    }
+                ]
+            }
+        ]
+    },
+    "marketplace": null,
+    "storePreferencesData": {
+        "countryCode": "BRA",
+        "currencyCode": "BRL",
+        "currencyFormatInfo": {
+            "CurrencyDecimalDigits": 2,
+            "CurrencyDecimalSeparator": ",",
+            "CurrencyGroupSeparator": ".",
+            "CurrencyGroupSize": 3,
+            "StartsWithCurrencySymbol": true
+        },
+        "currencyLocale": 1046,
+        "currencySymbol": "R$",
+        "timeZone": "E. South America Standard Time"
+    },
+    "customData": {
+        "customApps": [
+            {
+                "fields": {
+                    "items": "[{\"uniqueId\":\"24A9E7FC7E3847D98CC7444009FC8400\",\"id\":\"4052\",\"productId\":\"4035\",\"productRefId\":\"10085927\",\"refId\":\"10085927\",\"ean\":\"7896004713342\",\"name\":\"Acetilcisteína EMS 600mg Granulado Sabor Laranja 16 Envelopes Genérico ACETILCISTEINA 600MG\",\"skuName\":\"ACETILCISTEINA 600MG\",\"modalType\":null,\"parentItemIndex\":null,\"parentAssemblyBinding\":null,\"assemblies\":[],\"priceValidUntil\":\"2027-05-01T02:59:01Z\",\"tax\":0,\"price\":4690,\"listPrice\":8715,\"manualPrice\":null,\"manualPriceAppliedBy\":null,\"sellingPrice\":4341,\"rewardValue\":0,\"isGift\":false,\"additionalInfo\":{\"dimension\":null,\"brandName\":\"Ems\",\"brandId\":\"2044778\",\"offeringInfo\":null,\"offeringType\":null,\"offeringTypeId\":null},\"preSaleDate\":null,\"productCategoryIds\":\"/2001/20012/200038/\",\"productCategories\":{\"2001\":\"Medicamentos\",\"20012\":\"Gripe E Resfriado\",\"200038\":\"Para Tosse\"},\"quantity\":1,\"seller\":\"1\",\"sellerChain\":[\"1\",\"sjdigital0709\"],\"imageUrl\":\"https://sjdigital.vteximg.com.br/arquivos/ids/1185135-90-90/10085927_1.jpg?v=639116953380900000\",\"detailUrl\":\"/acetilcisteina-ems-600mg-granulado-sabor-laranja-16-envelopes-generico-10085927/p\",\"components\":[],\"bundleItems\":[],\"attachments\":[],\"attachmentOfferings\":[{\"name\":\"vtex.subscription.assinatura\",\"required\":false,\"schema\":{\"vtex.subscription.key.frequency\":{\"maximumNumberOfCharacters\":7,\"domain\":[\"10 day\",\" 15 day\",\" 30 day\",\" 60 day\",\" 90 day\"]}}}],\"offerings\":[],\"priceTags\":[{\"name\":\"discount@price-33b13c26-f9c2-4433-a0e1-47e6c934edef#dfaad920-ef1a-4927-9412-338750729c1d\",\"value\":-349,\"rawValue\":-3.49,\"isPercentual\":false,\"identifier\":\"33b13c26-f9c2-4433-a0e1-47e6c934edef\",\"owner\":\"sjdigital\",\"sourceSystem\":null}],\"availability\":\"available\",\"measurementUnit\":\"un\",\"unitMultiplier\":1,\"manufacturerCode\":null,\"priceDefinition\":{\"calculatedSellingPrice\":4341,\"total\":4341,\"sellingPrices\":[{\"value\":4341,\"quantity\":1}],\"reason\":\"priceTable\"},\"taxCode\":null,\"specifications\":[{\"Value\":[\"100714825\"],\"Id\":23,\"Name\":\"codPromocao\"},{\"Value\":[\"Não\"],\"Id\":24,\"Name\":\"skuControlado\"},{\"Value\":[\"Não\"],\"Id\":31,\"Name\":\"obrigaCartao_PBM\"},{\"Value\":[\"EMS\"],\"Id\":35,\"Name\":\"Fabricante\"},{\"Value\":[\"Granulado\"],\"Id\":36,\"Name\":\"Forma Farmacêutica\"},{\"Value\":[\"Genérico\"],\"Id\":37,\"Name\":\"Categoria do Medicamento\"},{\"Value\":[\"600mg\"],\"Id\":39,\"Name\":\"Dosagem\"},{\"Value\":[\"Acetilcisteína\"],\"Id\":40,\"Name\":\"Princípio Ativo\"},{\"Value\":[\"Acetilcisteína, sacarina sódica, essência de laranja, amarelo crepúsculo, amarelo crepúsculo laca de alumínio, dióxido  de silício e sacarose\"],\"Id\":41,\"Name\":\"Composição\"},{\"Value\":[\"A acetilcisteína é contraindicada para pacientes alérgicos a acetilcisteína e/ou demais componentes de suas formulações. Não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista. Este medicamento é contraindicado para crianças menores de 2 anos.  Atenção diabéticos: contém açúcar\"],\"Id\":42,\"Name\":\"Contraindicações\"},{\"Value\":[\"Tosse e expectoração\"],\"Id\":43,\"Name\":\"Indicações de Uso\"},{\"Value\":[\"Acetilcisteína é um medicamento. Seu uso pode trazer riscos. Procure um médico ou um farmacêutico. Leia a bula\"],\"Id\":44,\"Name\":\"Precauções\"},{\"Value\":[\"Hipersensibilidade, broncoespasmo, rinorreia, estomatite, vômito, náusea, urticária, rash (erupção cutânea) e prurido\"],\"Id\":45,\"Name\":\"Reações Adversas\"},{\"Value\":[\"1023513420104\"],\"Id\":47,\"Name\":\"Registro MS\"},{\"Value\":[\"7896004713342\"],\"Id\":48,\"Name\":\"EAN\"},{\"Value\":[\"100720470\"],\"Id\":385,\"Name\":\"codPromocaoApp\"},{\"Value\":[\"Não\"],\"Id\":389,\"Name\":\"obrigaCPF_PBM\"},{\"Value\":[\"Não\"],\"Id\":390,\"Name\":\"codPBM\"},{\"Value\":[\"Não\"],\"Id\":401,\"Name\":\"usoContinuo\"},{\"Value\":[\"Ambiente 15°C a 30°C\"],\"Id\":406,\"Name\":\"Onde, Como e Por Quanto tempo posso Guardar este Medicamento?\"},{\"Value\":[\"Secreção resíratória\"],\"Id\":408,\"Name\":\"Sintomas\"},{\"Value\":[\"false\"],\"Id\":409,\"Name\":\"entrega_nacional\"}]},{\"uniqueId\":\"3FBC8FCF6258442295412E4FBD04FF49\",\"id\":\"35668\",\"productId\":\"1258602\",\"productRefId\":\"10044471\",\"refId\":\"10044471\",\"ean\":\"7899420508981\",\"name\":\"Analgésico Ketalgi 500mg 14 Comprimidos Revestidos Supera KETALGI 500MG 14CP REV SUPERA\",\"skuName\":\"KETALGI 500MG 14CP REV SUPERA\",\"modalType\":null,\"parentItemIndex\":null,\"parentAssemblyBinding\":null,\"assemblies\":[],\"priceValidUntil\":\"2026-06-07T02:59:01Z\",\"tax\":0,\"price\":3579,\"listPrice\":4449,\"manualPrice\":null,\"manualPriceAppliedBy\":null,\"sellingPrice\":3313,\"rewardValue\":0,\"isGift\":false,\"additionalInfo\":{\"dimension\":null,\"brandName\":\"Cimed\",\"brandId\":\"2044783\",\"offeringInfo\":null,\"offeringType\":null,\"offeringTypeId\":null},\"preSaleDate\":null,\"productCategoryIds\":\"/2001/20022/\",\"productCategories\":{\"2001\":\"Medicamentos\",\"20022\":\"Analgésicos\"},\"quantity\":1,\"seller\":\"1\",\"sellerChain\":[\"1\",\"sjdigital0709\"],\"imageUrl\":\"https://sjdigital.vteximg.com.br/arquivos/ids/1126612-90-90/analgesico-ketalgi-500mg-14-comprimidos-revestidos-supera-10044471_1.jpg?v=638732544865030000\",\"detailUrl\":\"/analgesico-ketalgi-500mg-14-comprimidos-revestidos-supera-10044471/p\",\"components\":[],\"bundleItems\":[],\"attachments\":[],\"attachmentOfferings\":[{\"name\":\"vtex.subscription.assinatura\",\"required\":false,\"schema\":{\"vtex.subscription.key.frequency\":{\"maximumNumberOfCharacters\":7,\"domain\":[\"10 day\",\" 15 day\",\" 30 day\",\" 60 day\",\" 90 day\"]}}}],\"offerings\":[],\"priceTags\":[{\"name\":\"discount@price-33b13c26-f9c2-4433-a0e1-47e6c934edef#dfaad920-ef1a-4927-9412-338750729c1d\",\"value\":-266,\"rawValue\":-2.66,\"isPercentual\":false,\"identifier\":\"33b13c26-f9c2-4433-a0e1-47e6c934edef\",\"owner\":\"sjdigital\",\"sourceSystem\":null}],\"availability\":\"available\",\"measurementUnit\":\"un\",\"unitMultiplier\":1,\"manufacturerCode\":null,\"priceDefinition\":{\"calculatedSellingPrice\":3313,\"total\":3313,\"sellingPrices\":[{\"value\":3313,\"quantity\":1}],\"reason\":\"priceTable\"},\"taxCode\":null,\"specifications\":[{\"Value\":[\"\"],\"Id\":22,\"Name\":\"texto-advertencia-2\"},{\"Value\":[\"100709209\"],\"Id\":23,\"Name\":\"codPromocao\"},{\"Value\":[\"Não\"],\"Id\":24,\"Name\":\"skuControlado\"},{\"Value\":[\"Não\"],\"Id\":31,\"Name\":\"obrigaCartao_PBM\"},{\"Value\":[\"Supera\"],\"Id\":35,\"Name\":\"Fabricante\"},{\"Value\":[\"Comprimido Revestido\"],\"Id\":36,\"Name\":\"Forma Farmacêutica\"},{\"Value\":[\"1 caixa com 30 comprimidos\"],\"Id\":38,\"Name\":\"Quantidade\"},{\"Value\":[\"500mg\"],\"Id\":39,\"Name\":\"Dosagem\"},{\"Value\":[\"Etodolaco\"],\"Id\":40,\"Name\":\"Princípio Ativo\"},{\"Value\":[\"\"],\"Id\":41,\"Name\":\"Composição\"},{\"Value\":[\"Etodolaco é contraindicado em casos de hipersensibilidade ao Etodolaco ou a qualquer um dos componentes de sua formulação.  Etodolaco não deve ser administrado a pacientes que tenham antecedentes de broncoespasmos, urticária, angioedema ou outras reações alérgicas após o uso de ácido acetilsalicílico ou de outros AINEs.  Etodolaco é contraindicado em pacientes com úlcera gastroduodenal em evolução, insuficiência hepática ou renal graves, em crianças abaixo de 15 anos de idade e em pacientes com dor peri-operatória relacionada à cirurgia de revascularização miocárdica (pelo risco aumentado de infarto agudo do miocárdio [IAM] e de acidente vascular cerebral [AVC]).\"],\"Id\":42,\"Name\":\"Contraindicações\"},{\"Value\":[\"Este medicamento é indicado no tratamento da osteoartrose e da artrite reumatoide (aguda ou crônica) e no controle da dor, especialmente aquela associada a processos inflamatórios (como no pós-operatório de cirurgias odontológicas e obstétricas, traumas e outras condições, como artrite gotosa aguda, dismenorreia, enxaqueca etc).\"],\"Id\":43,\"Name\":\"Indicações de Uso\"},{\"Value\":[\"Etodolaco deve ser administrado com cautela em pacientes que apresentam antecedentes de doenças digestivas, como úlceras gastroduodenais ou colite ulcerativa, que estejam em uso de aspirina, anticoagulantes ou corticosteroides, em etilistas e tabagistas e em pacientes idosos ou debilitados. O uso da menor dose efetiva possível por curtos períodos de tempo reduz os riscos de complicações gastrointestinais. Terapia gastroprotetora concomitante (com inibidores da bomba de próton, por exemplo) é recomendável. Nos casos de hemorragias, ulcerações ou perfurações gastrointestinais, o tratamento deve ser interrompido imediatamente.  Os AINEs estão associados com um risco aumentado de eventos trombóticos cardiovasculares, incluindo IAM e AVC. O risco pode ser aumentado pelo uso prolongado e pela presença de fatores de risco cardiovascular concomitantes. Deve-se, portanto, avaliar cuidadosamente o perfil de risco cardiovascular dos pacientes antes da prescrição de Etodolaco e seu uso deve ser evitado em pacientes com insuficiência cardíaca.  Reações de hipersensibilidade, do tipo anafilactoide, podem ocorrer, especialmente em pacientes de risco (como aqueles com a tríade asma, intolerância à aspirina e rinite); nesses casos, o tratamento deve ser interrompido imediatamente e o paciente deve ser hospitalizado.  No início do tratamento é importante a verificação do volume da diurese e da função renal, principalmente nos pacientes que apresentam síndrome nefrótica, insuficiência cardíaca e cirrose, bem como naqueles sob tratamento com diurético, ou que possam estar hipovolêmicos, como após uma intervenção cirúrgica, particularmente pacientes idosos. Recomenda-se a realização periódica de exames para avaliação da função renal durante o tratamento prolongado.  Elevações limítrofes de uma ou mais enzimas hepáticas ocorrem em aproximadamente 15% dos pacientes usando AINEs, incluindo Etodolaco. Essas alterações laboratoriais podem progredir, permanecer inalteradas ou serem transitórias. Elevações importantes das enzimas ALT ou AST ( 3x o limite superior da normalidade) foram relatadas em 1% dos pacientes nos estudos clínicos com AINEs e casos raros de icterícia, hepatite fulminante, necrose hepática e falência hepática, alguns com desfecho fatal, também foram relatados. Recomendase a realização periódica de exames para avaliação da função hepática durante o tratamento prolongado.  Deve-se evitar a ingestão de bebidas alcoólicas durante o tratamento com Etodolaco, pois pode haver potencialização de eventos adversos gastrointestinais.  Não deve haver uso concomitante de paracetamol, ácido acetilsalicílico ou outros salicilatos, ou AINEs (diclofenaco, diflunisal, fenoprofeno, floctafenina, flurbinofreno, ibuprofeno, indometacina, cetoprofeno, cetorolaco, meclofenamato, ácido mefenâmico, naproxeno, fenilbutazona, piroxicam, sulindaco, ácido tiaprofênico, tolmetina) com Etodolaco.  Deve-se evitar atividades que exijam atenção, como a operação de máquinas ou veículos, pois podem ocorrer sintomas neurológicos como tontura, sonolência, obnubilação e embaçamento visual). Os pacientes em tratamento prolongado devem realizar avaliações oftalmológicas periódicas.  A adesão e a agregação plaquetária podem diminuir com os AINEs, o que pode prolongar o tempo de sangramento. Assim, pacientes com distúrbios de coagulação ou em uso de anticoagulantes devem ser cuidadosamente monitorados.  Pode haver o aparecimento de anemia com o uso de AINEs; desta maneira, pacientes em tratamento prolongado devem realizar hemogramas periodicamente. Raramente, os AINEs podem causar discrasias sanguíneas graves, como agranulocitose, trombocitopenia e anemia aplástica.  Os AINEs podem aumentar o risco de hipercalemia, especialmente em pacientes idosos, diabéticos, com doença renal ou em uso concomitante de medicamentos que induzem hipercalemia, como os inibidores da enzima conversora da angiotensina (ECA).  Os AINEs podem causar reações adversas dermatológicas graves, como dermatite exfoliativa, Síndrome de Stevens-Johnson e necrólise epidermólise tóxica. O tratamento deve ser descontinuado ao primeiro sinal de erupções cutâneas. Também pode ocorrer reações de fotossensibilidade.  O risco/benefício do uso de Etodolaco deve ser avaliado em situações clínicas como: hipertensão arterial (pode piorar), hemofilia, lúpus eritematoso sistêmico, insuficiência hepática e insuficiência renal.  Etodolaco deve ser suspenso de 24 a 48 horas antes de procedimentos cirúrgicos ou odontológicos.  Asma pré-existente Cerca de 10% dos pacientes com asma podem apresentar broncoespasmo com o uso de aspirina ou ácido acetilsalicílico. O uso de ácido acetilsalicílico em pacientes que apresentam tais reações foi associado a broncoespasmo graves e até fatais. O Etodolaco não deve ser administrado a pacientes que apresentam sensibilidade ao ácido acetilsalicílico ou a qualquer outro AINE, e deve ser usado com cautela em pacientes com asma pré-existente.  Gravidez Não existem estudos adequados ou bem controlados sobre o uso em mulheres grávidas. Devido aos efeitos desconhecidos dos AINEs sobre o parto e sobre o sistema cardiovascular fetal humano, o uso do medicamento durante os três primeiros meses e no último trimestre da gravidez é contraindicado.  Edololaco está classificado na categoria de risco C.  Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião dentista.  Amamentação Não se sabe se o Etodolaco é excretado no leite materno. Como muitas drogas são excretadas no leite materno e em virtude do risco potencial de reações adversas sérias em lactentes, devese decidir entre interromper a amamentação ou a medicação, levando em consideração a necessidade do tratamento e a importância do medicamento para a mãe.  Uso Pediátrico A segurança e a eficácia de Etodolaco não foram estabelecidas nas crianças.  Uso em idosos Não é necessário reduzir a dosagem em pacientes com mais de 65 anos de idade, tomando-se as mesmas precauções adotadas para adultos, com especial cuidado no que se refere à individualização da posologia. Deve-se evitar o uso prolongado pelo risco aumentado de eventos adversos gastrointestinais.\"],\"Id\":44,\"Name\":\"Precauções\"},{\"Value\":[\"As reações adversas ao Etodolaco são apresentadas a seguir, em ordem decrescente de frequência.  Comuns (> 1% e < 10%) Tontura, calafrios, febre, depressão, nervosismo, erupções cutâneas, prurido, dispepsia, dor abdominal, diarreia, flatulência, náusea, vômitos, constipação, melena, gastrite, disúria, fraqueza, embaçamento visual, tinido, poliuria.  Incomuns (> 0,1 % < 1%) Anemia, agranulocitose, angioedema, asma, anorexia, arritmias, alopecia, alucinações, reações anafilactoides, meningite asséptica, aumento do tempo de sangramento, insuficiência cardíaca, confusão mental, conjuntivite, cistite, duodenite, dispneia, equimoses, edema, eritema multiforme, esofagite, diminuição da audição, dermatite exfoliativa, cefaleia, hematêmese, hematúria, falência hepática, hepatite, hiperglicemia (em pacientes diabéticos bem controlados), hiperpigmentação, hipertensão, infecções, insônia, nefrite intersticial, metrorragia, icterícia, aumento das enzimas hepáticas, leucopenia, IAM, taquicardia, pancreatite, pancitopenia, parestesia, neuropatia periférica, fotofobia, reações de fotosensibilidade, infiltrado pulmonar (eosinofilia), sangramento retal, cálculo renal, insuficiência renal, choque, Síndrome de Stevens-Johnson, síncope, trombocitopenia, necrólise epidermólise tóxica, estomatite ulcerativa, urticária, erupções vesículo-bolhosas, necrose papilar renal, distúrbios visuais, reações alérgicas, úlcera gastrointestinal e vasculite necrotizante.\"],\"Id\":45,\"Name\":\"Reações Adversas\"},{\"Value\":[\"\"],\"Id\":46,\"Name\":\"Referência\"},{\"Value\":[\"1037203150133\"],\"Id\":47,\"Name\":\"Registro MS\"},{\"Value\":[\"7899420508981\"],\"Id\":48,\"Name\":\"EAN\"},{\"Value\":[\"\"],\"Id\":373,\"Name\":\"Bula\"},{\"Value\":[\"100709209\"],\"Id\":385,\"Name\":\"codPromocaoApp\"},{\"Value\":[\"\"],\"Id\":387,\"Name\":\"DescontoMaximoPbm\"},{\"Value\":[\"\"],\"Id\":388,\"Name\":\"codPromocaoPbm\"},{\"Value\":[\"Não\"],\"Id\":389,\"Name\":\"obrigaCPF_PBM\"},{\"Value\":[\"Não\"],\"Id\":390,\"Name\":\"codPBM\"},{\"Value\":[\"\"],\"Id\":391,\"Name\":\"price_gmc\"},{\"Value\":[\"\"],\"Id\":395,\"Name\":\"Qtd-Pct\"},{\"Value\":[\"Não\"],\"Id\":401,\"Name\":\"usoContinuo\"}]}]"
+                },
+                "id": "codpromocao",
+                "major": 1
+            }
+        ],
+        "customFields": []
+    },
+    "commercialConditionData": null,
+    "openTextField": null,
+    "invoiceData": null,
+    "changesAttachment": null,
+    "callCenterOperatorData": null,
+    "packageAttachment": {
+        "packages": []
+    },
+    "paymentData": {
+        "transactions": [
+            {
+                "isActive": true,
+                "transactionId": "FE7F7E35E0E84F79AFB06069684DB56E",
+                "merchantName": "SJDIGITAL",
+                "payments": [
+                    {
+                        "id": "97A3BBFF9CCC47BA9A99BEDBEAD72465",
+                        "paymentSystem": "4",
+                        "paymentSystemName": "Mastercard",
+                        "value": 13047,
+                        "installments": 3,
+                        "referenceValue": 13047,
+                        "cardHolder": null,
+                        "cardNumber": null,
+                        "firstDigits": "522626",
+                        "lastDigits": "9428",
+                        "cvv2": null,
+                        "expireMonth": null,
+                        "expireYear": null,
+                        "url": null,
+                        "giftCardId": null,
+                        "giftCardName": null,
+                        "giftCardCaption": null,
+                        "redemptionCode": null,
+                        "group": "creditCard",
+                        "tid": "QXX693NHLTZ3D3G3",
+                        "dueDate": null,
+                        "connectorResponses": {
+                            "ReturnCode": "201",
+                            "delayToAutoSettleAfterAntifraud": "604800",
+                            "generatedCardToken": "null",
+                            "Message": "Payment Approved by gateway",
+                            "paymentId": "97A3BBFF9CCC47BA9A99BEDBEAD72465",
+                            "Tid": "QXX693NHLTZ3D3G3",
+                            "code": "201",
+                            "delayToAutoSettle": "604800",
+                            "nsu": "615222010569",
+                            "acquirer": "AdyenMasterCard_BR_Ins_23316",
+                            "authId": "861607",
+                            "tid": "QXX693NHLTZ3D3G3",
+                            "connectorMetadata": "[{\"name\":\"Currency\",\"value\":\"*****\"},{\"name\":\"OriginalReference\",\"value\":\"*****\"}]",
+                            "authorizationId": "861607",
+                            "status": "approved",
+                            "message": "Payment Approved by gateway"
+                        },
+                        "giftCardProvider": null,
+                        "giftCardAsDiscount": null,
+                        "koinUrl": null,
+                        "accountId": "D468C5E4E2C64BE88797E037B2C3EFEE",
+                        "parentAccountId": "D468C5E4E2C64BE88797E037B2C3EFEE",
+                        "bankIssuedInvoiceIdentificationNumber": null,
+                        "bankIssuedInvoiceIdentificationNumberFormatted": null,
+                        "bankIssuedInvoiceBarCodeNumber": null,
+                        "bankIssuedInvoiceBarCodeType": null,
+                        "billingAddress": {
+                            "postalCode": "95680-024",
+                            "city": "Canela",
+                            "state": "RS",
+                            "country": "BRA",
+                            "street": "Rua Paul Harrys",
+                            "number": "288",
+                            "neighborhood": "Centro",
+                            "complement": "10",
+                            "reference": null,
+                            "geoCoordinates": [
+                                -50.815391540527344,
+                                -29.35952377319336
+                            ]
+                        },
+                        "paymentOrigin": null
+                    }
+                ]
+            }
+        ],
+        "giftCards": []
+    },
+    "shippingData": {
+        "id": "shippingData",
+        "address": {
+            "addressType": "residential",
+            "receiverName": "Johann Morais",
+            "addressId": "3560707674450",
+            "versionId": null,
+            "entityId": null,
+            "postalCode": "95680-024",
+            "city": "Canela",
+            "state": "RS",
+            "country": "BRA",
+            "street": "Rua Paul Harrys",
+            "number": "288",
+            "neighborhood": "Centro",
+            "complement": "10",
+            "reference": null,
+            "geoCoordinates": [
+                -50.815391540527344,
+                -29.35952377319336
+            ]
+        },
+        "logisticsInfo": [
+            {
+                "itemIndex": 0,
+                "itemId": "22181",
+                "selectedSla": "Entrega Padrão",
+                "selectedDeliveryChannel": "delivery",
+                "lockTTL": "10d",
+                "price": 173,
+                "listPrice": 173,
+                "sellingPrice": 173,
+                "deliveryWindow": null,
+                "deliveryCompany": "Entrega Padrão",
+                "shippingEstimate": "1d",
+                "shippingEstimateDate": "2026-06-02T22:50:51.7585505+00:00",
+                "slas": [
+                    {
+                        "id": "Retirada em Loja (0709P)",
+                        "name": "Retirada em Loja (0709P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "0709P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "95680-000",
+                                "city": "CANELA",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "AV JULIO DE CASTILHOS",
+                                "number": "211",
+                                "neighborhood": "CENTRO",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -50.81252,
+                                    -29.36101
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "709 - Farmácia São João 24h Canela 3",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital0709_0709P",
+                        "transitTime": "30m",
+                        "pickupDistance": 0.32365933060646057,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:20:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (1396P)",
+                        "name": "Retirada em Loja (1396P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "1396P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "95680-206",
+                                "city": "Canela",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "Rua Danton Corrêa da Silva",
+                                "number": "1016",
+                                "neighborhood": "Centro",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -50.81796,
+                                    -29.36337
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "1396 - Farmácia São João Canela 5 - Rodoviária",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital1396_1396P",
+                        "transitTime": "30m",
+                        "pickupDistance": 0.4948480427265167,
+                        "deliveryIds": [
+                            {
+                                "courierId": "1396R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "1396D",
+                                "quantity": 1,
+                                "warehouseId": "1396I",
+                                "accountCarrierName": "sjdigital1396",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:20:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (0316P)",
+                        "name": "Retirada em Loja (0316P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "0316P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "95680-000",
+                                "city": "CANELA",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "R FELISBERTO SOARES",
+                                "number": "54",
+                                "neighborhood": "CENTRO",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -50.81213,
+                                    -29.36392
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "316 - Farmácia São João Canela 2 - Catedral",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital0316_0316P",
+                        "transitTime": "30m",
+                        "pickupDistance": 0.5821257829666138,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0316R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "0316D",
+                                "quantity": 1,
+                                "warehouseId": "0316I",
+                                "accountCarrierName": "sjdigital0316",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:19:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (1022P)",
+                        "name": "Retirada em Loja (1022P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "1022P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "95680-000",
+                                "city": "CANELA",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "R JOAO PESSOA",
+                                "number": "412",
+                                "neighborhood": "CENTRO",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -50.80895,
+                                    -29.3574
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "1022 - Farmácia São João Centro Canela 4",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital1022_1022P",
+                        "transitTime": "30m",
+                        "pickupDistance": 0.6674493551254272,
+                        "deliveryIds": [
+                            {
+                                "courierId": "1022R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "1022D",
+                                "quantity": 1,
+                                "warehouseId": "1022I",
+                                "accountCarrierName": "sjdigital1022",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:20:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (0426P)",
+                        "name": "Retirada em Loja (0426P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "0426P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "93548-350",
+                                "city": "Novo Hamburgo",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "Avenida Doutor Maurício Cardoso",
+                                "number": "820",
+                                "neighborhood": "Hamburgo Velho",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -51.11604,
+                                    -29.67962
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "426 - Farmácia São João Hamburgo Velho Novo Hamburgo 22",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital0426_0426P",
+                        "transitTime": "30m",
+                        "pickupDistance": 45.96898651123047,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0426R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "0426D",
+                                "quantity": 1,
+                                "warehouseId": "0426I",
+                                "accountCarrierName": "sjdigital0426",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:20:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (0696P)",
+                        "name": "Retirada em Loja (0696P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "0696P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "93490-000",
+                                "city": "Novo Hamburgo",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "R João Aloysio Algayer",
+                                "number": "1202",
+                                "neighborhood": "Lomba Grande",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -51.04132,
+                                    -29.76203
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "696 - Farmácia São João Lomba Grande Novo Hamburgo 10",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital0696_0696P",
+                        "transitTime": "30m",
+                        "pickupDistance": 49.80634689331055,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0696R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "0696D",
+                                "quantity": 1,
+                                "warehouseId": "0696I",
+                                "accountCarrierName": "sjdigital0696",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:19:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Padrão",
+                        "name": "Entrega Padrão",
+                        "shippingEstimate": "1d",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 173,
+                        "listPrice": 173,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "1d",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709N",
+                                "courierName": "Entrega Padrão",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T22:50:51.7585505+00:00"
+                    },
+                    {
+                        "id": "Entrega Padrão São João",
+                        "name": "Entrega Padrão São João",
+                        "shippingEstimate": "1d",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 173,
+                        "listPrice": 173,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "1d",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709NSJ",
+                                "courierName": "Entrega Padrão São João",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T22:50:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Programada São João",
+                        "name": "Entrega Programada São João",
+                        "shippingEstimate": "6h",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [
+                            {
+                                "startDateUtc": "2026-06-02T09:00:00+00:00",
+                                "endDateUtc": "2026-06-02T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-02T13:00:00+00:00",
+                                "endDateUtc": "2026-06-02T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-02T18:00:00+00:00",
+                                "endDateUtc": "2026-06-02T21:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T09:00:00+00:00",
+                                "endDateUtc": "2026-06-03T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T13:00:00+00:00",
+                                "endDateUtc": "2026-06-03T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T18:00:00+00:00",
+                                "endDateUtc": "2026-06-03T21:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T09:00:00+00:00",
+                                "endDateUtc": "2026-06-04T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T13:00:00+00:00",
+                                "endDateUtc": "2026-06-04T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T18:00:00+00:00",
+                                "endDateUtc": "2026-06-04T21:00:59+00:00",
+                                "price": 0
+                            }
+                        ],
+                        "price": 231,
+                        "listPrice": 231,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "6h",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709PSJ",
+                                "courierName": "Entrega Programada São João",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T04:50:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Programada",
+                        "name": "Entrega Programada",
+                        "shippingEstimate": "6h",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [
+                            {
+                                "startDateUtc": "2026-06-02T09:00:00+00:00",
+                                "endDateUtc": "2026-06-02T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-02T13:00:00+00:00",
+                                "endDateUtc": "2026-06-02T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-02T18:00:00+00:00",
+                                "endDateUtc": "2026-06-02T22:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T09:00:00+00:00",
+                                "endDateUtc": "2026-06-03T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T13:00:00+00:00",
+                                "endDateUtc": "2026-06-03T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T18:00:00+00:00",
+                                "endDateUtc": "2026-06-03T22:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T09:00:00+00:00",
+                                "endDateUtc": "2026-06-04T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T13:00:00+00:00",
+                                "endDateUtc": "2026-06-04T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T18:00:00+00:00",
+                                "endDateUtc": "2026-06-04T22:00:59+00:00",
+                                "price": 0
+                            }
+                        ],
+                        "price": 231,
+                        "listPrice": 231,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "6h",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0316P",
+                                "courierName": "Entrega Programada",
+                                "dockId": "0316D",
+                                "quantity": 1,
+                                "warehouseId": "0316I",
+                                "accountCarrierName": "sjdigital0316",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T04:49:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Rápida",
+                        "name": "Entrega Rápida",
+                        "shippingEstimate": "2h",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 290,
+                        "listPrice": 290,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "2h",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709E",
+                                "courierName": "Entrega Rápida",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T00:50:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Rápida São João",
+                        "name": "Entrega Rápida São João",
+                        "shippingEstimate": "2h",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 290,
+                        "listPrice": 290,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "2h",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709ESJ",
+                                "courierName": "Entrega Rápida São João",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T00:50:00.0000000+00:00"
+                    }
+                ],
+                "shipsTo": [
+                    "BRA"
+                ],
+                "deliveryIds": [
+                    {
+                        "courierId": "0709N",
+                        "courierName": "Entrega Padrão",
+                        "dockId": "0709D",
+                        "quantity": 1,
+                        "warehouseId": "0709I",
+                        "accountCarrierName": "sjdigital0709",
+                        "kitItemDetails": []
+                    }
+                ],
+                "deliveryChannels": [
+                    {
+                        "id": "delivery",
+                        "stockBalance": 0
+                    },
+                    {
+                        "id": "pickup-in-point",
+                        "stockBalance": 0
+                    }
+                ],
+                "deliveryChannel": "delivery",
+                "pickupStoreInfo": {
+                    "additionalInfo": null,
+                    "address": null,
+                    "dockId": null,
+                    "friendlyName": null,
+                    "isPickupStore": false
+                },
+                "addressId": "3560707674450",
+                "versionId": null,
+                "entityId": null,
+                "polygonName": "",
+                "pickupPointId": null,
+                "transitTime": "1d"
+            },
+            {
+                "itemIndex": 1,
+                "itemId": "6591",
+                "selectedSla": "Entrega Padrão",
+                "selectedDeliveryChannel": "delivery",
+                "lockTTL": "10d",
+                "price": 282,
+                "listPrice": 282,
+                "sellingPrice": 282,
+                "deliveryWindow": null,
+                "deliveryCompany": "Entrega Padrão",
+                "shippingEstimate": "1d",
+                "shippingEstimateDate": "2026-06-02T22:50:51.7585695+00:00",
+                "slas": [
+                    {
+                        "id": "Retirada em Loja (0709P)",
+                        "name": "Retirada em Loja (0709P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "0709P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "95680-000",
+                                "city": "CANELA",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "AV JULIO DE CASTILHOS",
+                                "number": "211",
+                                "neighborhood": "CENTRO",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -50.81252,
+                                    -29.36101
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "709 - Farmácia São João 24h Canela 3",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital0709_0709P",
+                        "transitTime": "30m",
+                        "pickupDistance": 0.32365933060646057,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "0709D",
+                                "quantity": 2,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:20:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (1396P)",
+                        "name": "Retirada em Loja (1396P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "1396P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "95680-206",
+                                "city": "Canela",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "Rua Danton Corrêa da Silva",
+                                "number": "1016",
+                                "neighborhood": "Centro",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -50.81796,
+                                    -29.36337
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "1396 - Farmácia São João Canela 5 - Rodoviária",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital1396_1396P",
+                        "transitTime": "30m",
+                        "pickupDistance": 0.4948480427265167,
+                        "deliveryIds": [
+                            {
+                                "courierId": "1396R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "1396D",
+                                "quantity": 2,
+                                "warehouseId": "1396I",
+                                "accountCarrierName": "sjdigital1396",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:20:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (0316P)",
+                        "name": "Retirada em Loja (0316P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "0316P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "95680-000",
+                                "city": "CANELA",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "R FELISBERTO SOARES",
+                                "number": "54",
+                                "neighborhood": "CENTRO",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -50.81213,
+                                    -29.36392
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "316 - Farmácia São João Canela 2 - Catedral",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital0316_0316P",
+                        "transitTime": "30m",
+                        "pickupDistance": 0.5821257829666138,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0316R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "0316D",
+                                "quantity": 2,
+                                "warehouseId": "0316I",
+                                "accountCarrierName": "sjdigital0316",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:19:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (1022P)",
+                        "name": "Retirada em Loja (1022P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "1022P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "95680-000",
+                                "city": "CANELA",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "R JOAO PESSOA",
+                                "number": "412",
+                                "neighborhood": "CENTRO",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -50.80895,
+                                    -29.3574
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "1022 - Farmácia São João Centro Canela 4",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital1022_1022P",
+                        "transitTime": "30m",
+                        "pickupDistance": 0.6674493551254272,
+                        "deliveryIds": [
+                            {
+                                "courierId": "1022R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "1022D",
+                                "quantity": 2,
+                                "warehouseId": "1022I",
+                                "accountCarrierName": "sjdigital1022",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:20:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (0426P)",
+                        "name": "Retirada em Loja (0426P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "0426P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "93548-350",
+                                "city": "Novo Hamburgo",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "Avenida Doutor Maurício Cardoso",
+                                "number": "820",
+                                "neighborhood": "Hamburgo Velho",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -51.11604,
+                                    -29.67962
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "426 - Farmácia São João Hamburgo Velho Novo Hamburgo 22",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital0426_0426P",
+                        "transitTime": "30m",
+                        "pickupDistance": 45.96898651123047,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0426R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "0426D",
+                                "quantity": 2,
+                                "warehouseId": "0426I",
+                                "accountCarrierName": "sjdigital0426",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:20:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (0696P)",
+                        "name": "Retirada em Loja (0696P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "0696P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "93490-000",
+                                "city": "Novo Hamburgo",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "R João Aloysio Algayer",
+                                "number": "1202",
+                                "neighborhood": "Lomba Grande",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -51.04132,
+                                    -29.76203
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "696 - Farmácia São João Lomba Grande Novo Hamburgo 10",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital0696_0696P",
+                        "transitTime": "30m",
+                        "pickupDistance": 49.80634689331055,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0696R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "0696D",
+                                "quantity": 2,
+                                "warehouseId": "0696I",
+                                "accountCarrierName": "sjdigital0696",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:19:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Padrão",
+                        "name": "Entrega Padrão",
+                        "shippingEstimate": "1d",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 282,
+                        "listPrice": 282,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "1d",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709N",
+                                "courierName": "Entrega Padrão",
+                                "dockId": "0709D",
+                                "quantity": 2,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T22:50:51.7585695+00:00"
+                    },
+                    {
+                        "id": "Entrega Padrão São João",
+                        "name": "Entrega Padrão São João",
+                        "shippingEstimate": "1d",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 282,
+                        "listPrice": 282,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "1d",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709NSJ",
+                                "courierName": "Entrega Padrão São João",
+                                "dockId": "0709D",
+                                "quantity": 2,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T22:50:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Programada São João",
+                        "name": "Entrega Programada São João",
+                        "shippingEstimate": "6h",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [
+                            {
+                                "startDateUtc": "2026-06-02T09:00:00+00:00",
+                                "endDateUtc": "2026-06-02T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-02T13:00:00+00:00",
+                                "endDateUtc": "2026-06-02T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-02T18:00:00+00:00",
+                                "endDateUtc": "2026-06-02T21:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T09:00:00+00:00",
+                                "endDateUtc": "2026-06-03T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T13:00:00+00:00",
+                                "endDateUtc": "2026-06-03T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T18:00:00+00:00",
+                                "endDateUtc": "2026-06-03T21:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T09:00:00+00:00",
+                                "endDateUtc": "2026-06-04T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T13:00:00+00:00",
+                                "endDateUtc": "2026-06-04T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T18:00:00+00:00",
+                                "endDateUtc": "2026-06-04T21:00:59+00:00",
+                                "price": 0
+                            }
+                        ],
+                        "price": 378,
+                        "listPrice": 378,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "6h",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709PSJ",
+                                "courierName": "Entrega Programada São João",
+                                "dockId": "0709D",
+                                "quantity": 2,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T04:50:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Programada",
+                        "name": "Entrega Programada",
+                        "shippingEstimate": "6h",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [
+                            {
+                                "startDateUtc": "2026-06-02T09:00:00+00:00",
+                                "endDateUtc": "2026-06-02T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-02T13:00:00+00:00",
+                                "endDateUtc": "2026-06-02T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-02T18:00:00+00:00",
+                                "endDateUtc": "2026-06-02T22:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T09:00:00+00:00",
+                                "endDateUtc": "2026-06-03T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T13:00:00+00:00",
+                                "endDateUtc": "2026-06-03T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T18:00:00+00:00",
+                                "endDateUtc": "2026-06-03T22:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T09:00:00+00:00",
+                                "endDateUtc": "2026-06-04T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T13:00:00+00:00",
+                                "endDateUtc": "2026-06-04T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T18:00:00+00:00",
+                                "endDateUtc": "2026-06-04T22:00:59+00:00",
+                                "price": 0
+                            }
+                        ],
+                        "price": 378,
+                        "listPrice": 378,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "6h",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0316P",
+                                "courierName": "Entrega Programada",
+                                "dockId": "0316D",
+                                "quantity": 2,
+                                "warehouseId": "0316I",
+                                "accountCarrierName": "sjdigital0316",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T04:49:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Rápida",
+                        "name": "Entrega Rápida",
+                        "shippingEstimate": "2h",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 474,
+                        "listPrice": 474,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "2h",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709E",
+                                "courierName": "Entrega Rápida",
+                                "dockId": "0709D",
+                                "quantity": 2,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T00:50:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Rápida São João",
+                        "name": "Entrega Rápida São João",
+                        "shippingEstimate": "2h",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 474,
+                        "listPrice": 474,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "2h",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709ESJ",
+                                "courierName": "Entrega Rápida São João",
+                                "dockId": "0709D",
+                                "quantity": 2,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T00:50:00.0000000+00:00"
+                    }
+                ],
+                "shipsTo": [
+                    "BRA"
+                ],
+                "deliveryIds": [
+                    {
+                        "courierId": "0709N",
+                        "courierName": "Entrega Padrão",
+                        "dockId": "0709D",
+                        "quantity": 2,
+                        "warehouseId": "0709I",
+                        "accountCarrierName": "sjdigital0709",
+                        "kitItemDetails": []
+                    }
+                ],
+                "deliveryChannels": [
+                    {
+                        "id": "delivery",
+                        "stockBalance": 0
+                    },
+                    {
+                        "id": "pickup-in-point",
+                        "stockBalance": 0
+                    }
+                ],
+                "deliveryChannel": "delivery",
+                "pickupStoreInfo": {
+                    "additionalInfo": null,
+                    "address": null,
+                    "dockId": null,
+                    "friendlyName": null,
+                    "isPickupStore": false
+                },
+                "addressId": "3560707674450",
+                "versionId": null,
+                "entityId": null,
+                "polygonName": "",
+                "pickupPointId": null,
+                "transitTime": "1d"
+            },
+            {
+                "itemIndex": 2,
+                "itemId": "4052",
+                "selectedSla": "Entrega Padrão",
+                "selectedDeliveryChannel": "delivery",
+                "lockTTL": "10d",
+                "price": 106,
+                "listPrice": 106,
+                "sellingPrice": 106,
+                "deliveryWindow": null,
+                "deliveryCompany": "Entrega Padrão",
+                "shippingEstimate": "1d",
+                "shippingEstimateDate": "2026-06-02T22:50:51.7585788+00:00",
+                "slas": [
+                    {
+                        "id": "Retirada em Loja (0709P)",
+                        "name": "Retirada em Loja (0709P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "0709P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "95680-000",
+                                "city": "CANELA",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "AV JULIO DE CASTILHOS",
+                                "number": "211",
+                                "neighborhood": "CENTRO",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -50.81252,
+                                    -29.36101
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "709 - Farmácia São João 24h Canela 3",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital0709_0709P",
+                        "transitTime": "30m",
+                        "pickupDistance": 0.32365933060646057,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:20:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (1396P)",
+                        "name": "Retirada em Loja (1396P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "1396P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "95680-206",
+                                "city": "Canela",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "Rua Danton Corrêa da Silva",
+                                "number": "1016",
+                                "neighborhood": "Centro",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -50.81796,
+                                    -29.36337
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "1396 - Farmácia São João Canela 5 - Rodoviária",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital1396_1396P",
+                        "transitTime": "30m",
+                        "pickupDistance": 0.4948480427265167,
+                        "deliveryIds": [
+                            {
+                                "courierId": "1396R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "1396D",
+                                "quantity": 1,
+                                "warehouseId": "1396I",
+                                "accountCarrierName": "sjdigital1396",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:20:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (0316P)",
+                        "name": "Retirada em Loja (0316P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "0316P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "95680-000",
+                                "city": "CANELA",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "R FELISBERTO SOARES",
+                                "number": "54",
+                                "neighborhood": "CENTRO",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -50.81213,
+                                    -29.36392
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "316 - Farmácia São João Canela 2 - Catedral",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital0316_0316P",
+                        "transitTime": "30m",
+                        "pickupDistance": 0.5821257829666138,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0316R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "0316D",
+                                "quantity": 1,
+                                "warehouseId": "0316I",
+                                "accountCarrierName": "sjdigital0316",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:19:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (1022P)",
+                        "name": "Retirada em Loja (1022P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "1022P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "95680-000",
+                                "city": "CANELA",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "R JOAO PESSOA",
+                                "number": "412",
+                                "neighborhood": "CENTRO",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -50.80895,
+                                    -29.3574
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "1022 - Farmácia São João Centro Canela 4",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital1022_1022P",
+                        "transitTime": "30m",
+                        "pickupDistance": 0.6674493551254272,
+                        "deliveryIds": [
+                            {
+                                "courierId": "1022R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "1022D",
+                                "quantity": 1,
+                                "warehouseId": "1022I",
+                                "accountCarrierName": "sjdigital1022",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:20:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (0426P)",
+                        "name": "Retirada em Loja (0426P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "0426P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "93548-350",
+                                "city": "Novo Hamburgo",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "Avenida Doutor Maurício Cardoso",
+                                "number": "820",
+                                "neighborhood": "Hamburgo Velho",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -51.11604,
+                                    -29.67962
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "426 - Farmácia São João Hamburgo Velho Novo Hamburgo 22",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital0426_0426P",
+                        "transitTime": "30m",
+                        "pickupDistance": 45.96898651123047,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0426R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "0426D",
+                                "quantity": 1,
+                                "warehouseId": "0426I",
+                                "accountCarrierName": "sjdigital0426",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:20:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (0696P)",
+                        "name": "Retirada em Loja (0696P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "0696P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "93490-000",
+                                "city": "Novo Hamburgo",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "R João Aloysio Algayer",
+                                "number": "1202",
+                                "neighborhood": "Lomba Grande",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -51.04132,
+                                    -29.76203
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "696 - Farmácia São João Lomba Grande Novo Hamburgo 10",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital0696_0696P",
+                        "transitTime": "30m",
+                        "pickupDistance": 49.80634689331055,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0696R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "0696D",
+                                "quantity": 1,
+                                "warehouseId": "0696I",
+                                "accountCarrierName": "sjdigital0696",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:19:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Padrão",
+                        "name": "Entrega Padrão",
+                        "shippingEstimate": "1d",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 106,
+                        "listPrice": 106,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "1d",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709N",
+                                "courierName": "Entrega Padrão",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T22:50:51.7585788+00:00"
+                    },
+                    {
+                        "id": "Entrega Padrão São João",
+                        "name": "Entrega Padrão São João",
+                        "shippingEstimate": "1d",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 106,
+                        "listPrice": 106,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "1d",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709NSJ",
+                                "courierName": "Entrega Padrão São João",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T22:50:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Programada São João",
+                        "name": "Entrega Programada São João",
+                        "shippingEstimate": "6h",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [
+                            {
+                                "startDateUtc": "2026-06-02T09:00:00+00:00",
+                                "endDateUtc": "2026-06-02T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-02T13:00:00+00:00",
+                                "endDateUtc": "2026-06-02T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-02T18:00:00+00:00",
+                                "endDateUtc": "2026-06-02T21:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T09:00:00+00:00",
+                                "endDateUtc": "2026-06-03T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T13:00:00+00:00",
+                                "endDateUtc": "2026-06-03T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T18:00:00+00:00",
+                                "endDateUtc": "2026-06-03T21:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T09:00:00+00:00",
+                                "endDateUtc": "2026-06-04T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T13:00:00+00:00",
+                                "endDateUtc": "2026-06-04T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T18:00:00+00:00",
+                                "endDateUtc": "2026-06-04T21:00:59+00:00",
+                                "price": 0
+                            }
+                        ],
+                        "price": 142,
+                        "listPrice": 142,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "6h",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709PSJ",
+                                "courierName": "Entrega Programada São João",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T04:50:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Programada",
+                        "name": "Entrega Programada",
+                        "shippingEstimate": "6h",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [
+                            {
+                                "startDateUtc": "2026-06-02T09:00:00+00:00",
+                                "endDateUtc": "2026-06-02T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-02T13:00:00+00:00",
+                                "endDateUtc": "2026-06-02T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-02T18:00:00+00:00",
+                                "endDateUtc": "2026-06-02T22:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T09:00:00+00:00",
+                                "endDateUtc": "2026-06-03T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T13:00:00+00:00",
+                                "endDateUtc": "2026-06-03T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T18:00:00+00:00",
+                                "endDateUtc": "2026-06-03T22:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T09:00:00+00:00",
+                                "endDateUtc": "2026-06-04T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T13:00:00+00:00",
+                                "endDateUtc": "2026-06-04T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T18:00:00+00:00",
+                                "endDateUtc": "2026-06-04T22:00:59+00:00",
+                                "price": 0
+                            }
+                        ],
+                        "price": 142,
+                        "listPrice": 142,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "6h",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0316P",
+                                "courierName": "Entrega Programada",
+                                "dockId": "0316D",
+                                "quantity": 1,
+                                "warehouseId": "0316I",
+                                "accountCarrierName": "sjdigital0316",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T04:49:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Rápida",
+                        "name": "Entrega Rápida",
+                        "shippingEstimate": "2h",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 178,
+                        "listPrice": 178,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "2h",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709E",
+                                "courierName": "Entrega Rápida",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T00:50:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Rápida São João",
+                        "name": "Entrega Rápida São João",
+                        "shippingEstimate": "2h",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 178,
+                        "listPrice": 178,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "2h",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709ESJ",
+                                "courierName": "Entrega Rápida São João",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T00:50:00.0000000+00:00"
+                    }
+                ],
+                "shipsTo": [
+                    "BRA"
+                ],
+                "deliveryIds": [
+                    {
+                        "courierId": "0709N",
+                        "courierName": "Entrega Padrão",
+                        "dockId": "0709D",
+                        "quantity": 1,
+                        "warehouseId": "0709I",
+                        "accountCarrierName": "sjdigital0709",
+                        "kitItemDetails": []
+                    }
+                ],
+                "deliveryChannels": [
+                    {
+                        "id": "delivery",
+                        "stockBalance": 0
+                    },
+                    {
+                        "id": "pickup-in-point",
+                        "stockBalance": 0
+                    }
+                ],
+                "deliveryChannel": "delivery",
+                "pickupStoreInfo": {
+                    "additionalInfo": null,
+                    "address": null,
+                    "dockId": null,
+                    "friendlyName": null,
+                    "isPickupStore": false
+                },
+                "addressId": "3560707674450",
+                "versionId": null,
+                "entityId": null,
+                "polygonName": "",
+                "pickupPointId": null,
+                "transitTime": "1d"
+            },
+            {
+                "itemIndex": 3,
+                "itemId": "35668",
+                "selectedSla": "Entrega Padrão",
+                "selectedDeliveryChannel": "delivery",
+                "lockTTL": "10d",
+                "price": 29,
+                "listPrice": 29,
+                "sellingPrice": 29,
+                "deliveryWindow": null,
+                "deliveryCompany": "Entrega Padrão",
+                "shippingEstimate": "1d",
+                "shippingEstimateDate": "2026-06-02T22:50:51.7585885+00:00",
+                "slas": [
+                    {
+                        "id": "Retirada em Loja (0709P)",
+                        "name": "Retirada em Loja (0709P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "0709P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "95680-000",
+                                "city": "CANELA",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "AV JULIO DE CASTILHOS",
+                                "number": "211",
+                                "neighborhood": "CENTRO",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -50.81252,
+                                    -29.36101
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "709 - Farmácia São João 24h Canela 3",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital0709_0709P",
+                        "transitTime": "30m",
+                        "pickupDistance": 0.32365933060646057,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:20:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (1396P)",
+                        "name": "Retirada em Loja (1396P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "1396P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "95680-206",
+                                "city": "Canela",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "Rua Danton Corrêa da Silva",
+                                "number": "1016",
+                                "neighborhood": "Centro",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -50.81796,
+                                    -29.36337
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "1396 - Farmácia São João Canela 5 - Rodoviária",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital1396_1396P",
+                        "transitTime": "30m",
+                        "pickupDistance": 0.4948480427265167,
+                        "deliveryIds": [
+                            {
+                                "courierId": "1396R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "1396D",
+                                "quantity": 1,
+                                "warehouseId": "1396I",
+                                "accountCarrierName": "sjdigital1396",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:20:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (0316P)",
+                        "name": "Retirada em Loja (0316P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "0316P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "95680-000",
+                                "city": "CANELA",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "R FELISBERTO SOARES",
+                                "number": "54",
+                                "neighborhood": "CENTRO",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -50.81213,
+                                    -29.36392
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "316 - Farmácia São João Canela 2 - Catedral",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital0316_0316P",
+                        "transitTime": "30m",
+                        "pickupDistance": 0.5821257829666138,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0316R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "0316D",
+                                "quantity": 1,
+                                "warehouseId": "0316I",
+                                "accountCarrierName": "sjdigital0316",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:19:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (1022P)",
+                        "name": "Retirada em Loja (1022P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "1022P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "95680-000",
+                                "city": "CANELA",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "R JOAO PESSOA",
+                                "number": "412",
+                                "neighborhood": "CENTRO",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -50.80895,
+                                    -29.3574
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "1022 - Farmácia São João Centro Canela 4",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital1022_1022P",
+                        "transitTime": "30m",
+                        "pickupDistance": 0.6674493551254272,
+                        "deliveryIds": [
+                            {
+                                "courierId": "1022R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "1022D",
+                                "quantity": 1,
+                                "warehouseId": "1022I",
+                                "accountCarrierName": "sjdigital1022",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:20:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (0426P)",
+                        "name": "Retirada em Loja (0426P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "0426P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "93548-350",
+                                "city": "Novo Hamburgo",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "Avenida Doutor Maurício Cardoso",
+                                "number": "820",
+                                "neighborhood": "Hamburgo Velho",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -51.11604,
+                                    -29.67962
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "426 - Farmácia São João Hamburgo Velho Novo Hamburgo 22",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital0426_0426P",
+                        "transitTime": "30m",
+                        "pickupDistance": 45.96898651123047,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0426R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "0426D",
+                                "quantity": 1,
+                                "warehouseId": "0426I",
+                                "accountCarrierName": "sjdigital0426",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:20:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Retirada em Loja (0696P)",
+                        "name": "Retirada em Loja (0696P)",
+                        "shippingEstimate": "30m",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 0,
+                        "listPrice": 0,
+                        "deliveryChannel": "pickup-in-point",
+                        "pickupStoreInfo": {
+                            "additionalInfo": "",
+                            "address": {
+                                "addressType": "pickup",
+                                "receiverName": null,
+                                "addressId": "0696P",
+                                "versionId": null,
+                                "entityId": null,
+                                "postalCode": "93490-000",
+                                "city": "Novo Hamburgo",
+                                "state": "RS",
+                                "country": "BRA",
+                                "street": "R João Aloysio Algayer",
+                                "number": "1202",
+                                "neighborhood": "Lomba Grande",
+                                "complement": "",
+                                "reference": null,
+                                "geoCoordinates": [
+                                    -51.04132,
+                                    -29.76203
+                                ]
+                            },
+                            "dockId": null,
+                            "friendlyName": "696 - Farmácia São João Lomba Grande Novo Hamburgo 10",
+                            "isPickupStore": true
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": "sjdigital0696_0696P",
+                        "transitTime": "30m",
+                        "pickupDistance": 49.80634689331055,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0696R",
+                                "courierName": "Retirada em Loja",
+                                "dockId": "0696D",
+                                "quantity": 1,
+                                "warehouseId": "0696I",
+                                "accountCarrierName": "sjdigital0696",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-01T23:19:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Padrão",
+                        "name": "Entrega Padrão",
+                        "shippingEstimate": "1d",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 29,
+                        "listPrice": 29,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "1d",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709N",
+                                "courierName": "Entrega Padrão",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T22:50:51.7585885+00:00"
+                    },
+                    {
+                        "id": "Entrega Padrão São João",
+                        "name": "Entrega Padrão São João",
+                        "shippingEstimate": "1d",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 29,
+                        "listPrice": 29,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "1d",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709NSJ",
+                                "courierName": "Entrega Padrão São João",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T22:50:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Programada São João",
+                        "name": "Entrega Programada São João",
+                        "shippingEstimate": "6h",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [
+                            {
+                                "startDateUtc": "2026-06-02T09:00:00+00:00",
+                                "endDateUtc": "2026-06-02T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-02T13:00:00+00:00",
+                                "endDateUtc": "2026-06-02T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-02T18:00:00+00:00",
+                                "endDateUtc": "2026-06-02T21:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T09:00:00+00:00",
+                                "endDateUtc": "2026-06-03T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T13:00:00+00:00",
+                                "endDateUtc": "2026-06-03T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T18:00:00+00:00",
+                                "endDateUtc": "2026-06-03T21:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T09:00:00+00:00",
+                                "endDateUtc": "2026-06-04T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T13:00:00+00:00",
+                                "endDateUtc": "2026-06-04T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T18:00:00+00:00",
+                                "endDateUtc": "2026-06-04T21:00:59+00:00",
+                                "price": 0
+                            }
+                        ],
+                        "price": 39,
+                        "listPrice": 39,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "6h",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709PSJ",
+                                "courierName": "Entrega Programada São João",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T04:50:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Programada",
+                        "name": "Entrega Programada",
+                        "shippingEstimate": "6h",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [
+                            {
+                                "startDateUtc": "2026-06-02T09:00:00+00:00",
+                                "endDateUtc": "2026-06-02T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-02T13:00:00+00:00",
+                                "endDateUtc": "2026-06-02T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-02T18:00:00+00:00",
+                                "endDateUtc": "2026-06-02T22:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T09:00:00+00:00",
+                                "endDateUtc": "2026-06-03T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T13:00:00+00:00",
+                                "endDateUtc": "2026-06-03T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-03T18:00:00+00:00",
+                                "endDateUtc": "2026-06-03T22:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T09:00:00+00:00",
+                                "endDateUtc": "2026-06-04T13:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T13:00:00+00:00",
+                                "endDateUtc": "2026-06-04T18:00:59+00:00",
+                                "price": 0
+                            },
+                            {
+                                "startDateUtc": "2026-06-04T18:00:00+00:00",
+                                "endDateUtc": "2026-06-04T22:00:59+00:00",
+                                "price": 0
+                            }
+                        ],
+                        "price": 39,
+                        "listPrice": 39,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "6h",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0316P",
+                                "courierName": "Entrega Programada",
+                                "dockId": "0316D",
+                                "quantity": 1,
+                                "warehouseId": "0316I",
+                                "accountCarrierName": "sjdigital0316",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T04:49:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Rápida",
+                        "name": "Entrega Rápida",
+                        "shippingEstimate": "2h",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 48,
+                        "listPrice": 48,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "2h",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709E",
+                                "courierName": "Entrega Rápida",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T00:50:00.0000000+00:00"
+                    },
+                    {
+                        "id": "Entrega Rápida São João",
+                        "name": "Entrega Rápida São João",
+                        "shippingEstimate": "2h",
+                        "deliveryWindow": null,
+                        "availableDeliveryWindows": [],
+                        "price": 48,
+                        "listPrice": 48,
+                        "deliveryChannel": "delivery",
+                        "pickupStoreInfo": {
+                            "additionalInfo": null,
+                            "address": null,
+                            "dockId": null,
+                            "friendlyName": null,
+                            "isPickupStore": false
+                        },
+                        "polygonName": "",
+                        "lockTTL": "10d",
+                        "pickupPointId": null,
+                        "transitTime": "2h",
+                        "pickupDistance": null,
+                        "deliveryIds": [
+                            {
+                                "courierId": "0709ESJ",
+                                "courierName": "Entrega Rápida São João",
+                                "dockId": "0709D",
+                                "quantity": 1,
+                                "warehouseId": "0709I",
+                                "accountCarrierName": "sjdigital0709",
+                                "kitItemDetails": []
+                            }
+                        ],
+                        "shippingEstimateDate": "2026-06-02T00:50:00.0000000+00:00"
+                    }
+                ],
+                "shipsTo": [
+                    "BRA"
+                ],
+                "deliveryIds": [
+                    {
+                        "courierId": "0709N",
+                        "courierName": "Entrega Padrão",
+                        "dockId": "0709D",
+                        "quantity": 1,
+                        "warehouseId": "0709I",
+                        "accountCarrierName": "sjdigital0709",
+                        "kitItemDetails": []
+                    }
+                ],
+                "deliveryChannels": [
+                    {
+                        "id": "delivery",
+                        "stockBalance": 0
+                    },
+                    {
+                        "id": "pickup-in-point",
+                        "stockBalance": 0
+                    }
+                ],
+                "deliveryChannel": "delivery",
+                "pickupStoreInfo": {
+                    "additionalInfo": null,
+                    "address": null,
+                    "dockId": null,
+                    "friendlyName": null,
+                    "isPickupStore": false
+                },
+                "addressId": "3560707674450",
+                "versionId": null,
+                "entityId": null,
+                "polygonName": "",
+                "pickupPointId": null,
+                "transitTime": "1d"
+            }
+        ],
+        "trackingHints": null,
+        "selectedAddresses": [
+            {
+                "addressType": "residential",
+                "receiverName": "Johann Morais",
+                "addressId": "3560707674450",
+                "versionId": null,
+                "entityId": null,
+                "postalCode": "95680-024",
+                "city": "Canela",
+                "state": "RS",
+                "country": "BRA",
+                "street": "Rua Paul Harrys",
+                "number": "288",
+                "neighborhood": "Centro",
+                "complement": "10",
+                "reference": null,
+                "geoCoordinates": [
+                    -50.815391540527344,
+                    -29.35952377319336
+                ]
+            }
+        ],
+        "availableAddresses": [
+            {
+                "addressType": "residential",
+                "receiverName": "Johann Morais",
+                "addressId": "3560707674450",
+                "versionId": null,
+                "entityId": null,
+                "postalCode": "95680-024",
+                "city": "Canela",
+                "state": "RS",
+                "country": "BRA",
+                "street": "Rua Paul Harrys",
+                "number": "288",
+                "neighborhood": "Centro",
+                "complement": "10",
+                "reference": null,
+                "geoCoordinates": [
+                    -50.815391540527344,
+                    -29.35952377319336
+                ]
+            }
+        ],
+        "contactInformation": [],
+        "contactsInfo": []
+    },
+    "ratesAndBenefitsData": {
+        "id": "ratesAndBenefitsData",
+        "rateAndBenefitsIdentifiers": [
+            {
+                "description": "Cupom para Campanha | São João de Ofertas",
+                "featured": false,
+                "id": "33b13c26-f9c2-4433-a0e1-47e6c934edef",
+                "name": "Cupom - OFERTAO",
+                "matchedParameters": {
+                    "productCluster@CatalogSystem": "2900|exclusive",
+                    "couponCode@Marketing": "OFERTAO"
+                },
+                "additionalInfo": null
+            }
+        ]
+    },
+    "marketingData": {
+        "id": "marketingData",
+        "utmSource": null,
+        "utmPartner": null,
+        "utmMedium": null,
+        "utmCampaign": null,
+        "coupon": "OFERTAO",
+        "utmiCampaign": null,
+        "utmipage": null,
+        "utmiPart": null,
+        "marketingTags": []
+    },
+    "giftRegistryData": null,
+    "clientProfileData": {
+        "id": "clientProfileData",
+        "email": "johanncpm@gmail.com-260501559760b.ct.vtex.com.br",
+        "firstName": "Johann",
+        "lastName": "Morais",
+        "documentType": "cpf",
+        "document": "09834924925",
+        "phone": "48998263707",
+        "corporateName": null,
+        "tradeName": null,
+        "corporateDocument": null,
+        "stateInscription": null,
+        "corporatePhone": null,
+        "isCorporate": false,
+        "userProfileId": "e05c4ffd-4ef8-4fa7-a484-83f76729af38",
+        "userProfileVersion": null,
+        "customerClass": null,
+        "customerCode": null
+    },
+    "items": [
+        {
+            "uniqueId": "134FDF198D3C46F4B61AF0CB7B3E4B0F",
+            "id": "22181",
+            "productId": "1245031",
+            "ean": "7891150081222",
+            "lockId": null,
+            "itemAttachment": {
+                "content": {},
+                "name": null
+            },
+            "attachments": [],
+            "quantity": 1,
+            "seller": "sjdigital0709",
+            "name": "Desodorante Antitranspirante Aerossol Dove Men+Care Invisible Dry 250ml DES DOVE AERO 250ML MEN+CARE INVISIBLE",
+            "refId": "10031250",
+            "price": 3590,
+            "listPrice": 3590,
+            "manualPrice": null,
+            "manualPriceAppliedBy": null,
+            "priceTags": [
+                {
+                    "name": "discount@price-33b13c26-f9c2-4433-a0e1-47e6c934edef#dfaad920-ef1a-4927-9412-338750729c1d",
+                    "value": -267,
+                    "isPercentual": false,
+                    "identifier": "33b13c26-f9c2-4433-a0e1-47e6c934edef",
+                    "rawValue": -2.67,
+                    "rate": null,
+                    "jurisCode": null,
+                    "jurisType": null,
+                    "jurisName": null
+                }
+            ],
+            "imageUrl": "https://sjdigital.vteximg.com.br/arquivos/ids/1161871-90-90/desodorante-antitranspirante-aerossol-dove-mencare-invisible-dry-250ml-10031250_1.jpg?v=639047843051700000",
+            "detailUrl": "/desodorante-antitranspirante-aerossol-dove-mencare-invisible-dry-250ml-10031250/p",
+            "components": [],
+            "bundleItems": [],
+            "params": [],
+            "offerings": [],
+            "attachmentOfferings": [
+                {
+                    "name": "vtex.subscription.assinatura",
+                    "required": false,
+                    "schema": {
+                        "vtex.subscription.key.frequency": {
+                            "MaximumNumberOfCharacters": 7,
+                            "Domain": [
+                                "10 day",
+                                " 15 day",
+                                " 30 day",
+                                " 60 day",
+                                " 90 day"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "sellerSku": "22181",
+            "priceValidUntil": "2027-06-01T22:49:55.0000000+00:00",
+            "commission": 0,
+            "tax": 0,
+            "preSaleDate": null,
+            "additionalInfo": {
+                "brandName": "Dove",
+                "brandId": "2007209",
+                "categoriesIds": "/2006/20072/200310/",
+                "categories": [
+                    {
+                        "id": 200310,
+                        "name": "Desodorante Aerosol"
+                    },
+                    {
+                        "id": 20072,
+                        "name": "Desodorante"
+                    },
+                    {
+                        "id": 2006,
+                        "name": "Higiene"
+                    }
+                ],
+                "productClusterId": "205,607,616,623,658,719,737,740,780,790,791,798,801,806,810,811,814,821,854,863,864,867,868,869,884,887,891,894,895,897,900,940,958,979,980,981,982,983,995,997,998,1000,1001,1002,1003,1032,1049,1062,1064,1067,1069,1072,1073,1074,1075,1084,1085,1086,1097,1098,1100,1106,1125,1126,1127,1128,1132,1144,1152,1154,1155,1185,1186,1187,1195,1201,1202,1203,1223,1249,1250,1251,1252,1254,1257,1258,1261,1262,1281,1290,1298,1319,1322,1324,1328,1331,1332,1338,1340,1370,1378,1388,1393,1394,1411,1412,1414,1415,1424,1431,1435,1441,1442,1481,1487,1494,1498,1502,1521,1535,1544,1545,1548,1550,1551,1552,1553,1554,1589,1596,1603,1605,1634,1647,1654,1660,1672,1675,1729,1772,1778,1781,1810,1812,1813,1814,1816,1831,1855,1881,1891,1903,1915,1932,1933,1939,1977,1990,2006,2011,2034,2060,2073,2074,2081,2099,2124,2130,2149,2159,2167,2187,2191,2195,2197,2199,2200,2240,2244,2246,2252,2266,2295,2316,2323,2325,2338,2339,2349,2360,2372,2374,2394,2400,2406,2407,2416,2419,2420,2421,2429,2431,2461,2466,2485,2488,2501,2507,2525,2543,2621,2820,2849,3012,3057,3082,3091,3125,3132,3140",
+                "commercialConditionId": "1",
+                "dimension": {
+                    "cubicweight": 0.0,
+                    "height": 19.9,
+                    "length": 4.6,
+                    "weight": 187.0,
+                    "width": 4.6
+                },
+                "offeringInfo": null,
+                "offeringType": null,
+                "offeringTypeId": null
+            },
+            "measurementUnit": "un",
+            "unitMultiplier": 1.0,
+            "sellingPrice": 3323,
+            "isGift": false,
+            "shippingPrice": null,
+            "rewardValue": 0,
+            "freightCommission": 0,
+            "priceDefinition": {
+                "sellingPrices": [
+                    {
+                        "value": 3323,
+                        "quantity": 1
+                    }
+                ],
+                "calculatedSellingPrice": 3323,
+                "total": 3323,
+                "reason": "priceTable"
+            },
+            "taxCode": null,
+            "parentItemIndex": null,
+            "parentAssemblyBinding": null,
+            "callCenterOperator": null,
+            "serialNumbers": null,
+            "assemblies": [],
+            "costPrice": null
+        },
+        {
+            "uniqueId": "A2149F7F5A4E45E8A59AC67E2E485A8D",
+            "id": "6591",
+            "productId": "6564",
+            "ean": "7899674022004",
+            "lockId": null,
+            "itemAttachment": {
+                "content": {},
+                "name": null
+            },
+            "attachments": [],
+            "quantity": 2,
+            "seller": "sjdigital0709",
+            "name": "Desodorante Aerossol Above Women Sport Energy 150ml DES ABOVE AERO 150ML",
+            "refId": "10004938",
+            "price": 799,
+            "listPrice": 799,
+            "manualPrice": null,
+            "manualPriceAppliedBy": null,
+            "priceTags": [
+                {
+                    "name": "discount@price-33b13c26-f9c2-4433-a0e1-47e6c934edef#dfaad920-ef1a-4927-9412-338750729c1d",
+                    "value": -118,
+                    "isPercentual": false,
+                    "identifier": "33b13c26-f9c2-4433-a0e1-47e6c934edef",
+                    "rawValue": -1.18,
+                    "rate": null,
+                    "jurisCode": null,
+                    "jurisType": null,
+                    "jurisName": null
+                }
+            ],
+            "imageUrl": "https://sjdigital.vteximg.com.br/arquivos/ids/802866-90-90/desodorante-aerossol-above-women-sport-energy-150ml-10004938_1.jpg?v=639021048636930000",
+            "detailUrl": "/desodorante-aerossol-above-women-sport-energy-150ml-10004938/p",
+            "components": [],
+            "bundleItems": [],
+            "params": [],
+            "offerings": [],
+            "attachmentOfferings": [
+                {
+                    "name": "vtex.subscription.assinatura",
+                    "required": false,
+                    "schema": {
+                        "vtex.subscription.key.frequency": {
+                            "MaximumNumberOfCharacters": 7,
+                            "Domain": [
+                                "10 day",
+                                " 15 day",
+                                " 30 day",
+                                " 60 day",
+                                " 90 day"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "sellerSku": "6591",
+            "priceValidUntil": "2027-06-01T22:49:55.0000000+00:00",
+            "commission": 0,
+            "tax": 0,
+            "preSaleDate": null,
+            "additionalInfo": {
+                "brandName": "Above",
+                "brandId": "2004583",
+                "categoriesIds": "/2006/20072/200310/",
+                "categories": [
+                    {
+                        "id": 200310,
+                        "name": "Desodorante Aerosol"
+                    },
+                    {
+                        "id": 20072,
+                        "name": "Desodorante"
+                    },
+                    {
+                        "id": 2006,
+                        "name": "Higiene"
+                    }
+                ],
+                "productClusterId": "205,575,607,616,658,737,740,790,791,798,801,806,810,811,814,821,854,863,864,867,868,869,884,887,891,894,895,897,900,940,958,979,980,981,982,983,995,997,998,1000,1001,1002,1003,1032,1049,1062,1064,1067,1069,1072,1073,1074,1075,1084,1085,1086,1097,1098,1100,1125,1126,1127,1128,1132,1144,1152,1154,1155,1185,1186,1187,1201,1202,1203,1223,1249,1250,1251,1252,1254,1257,1258,1261,1262,1281,1290,1298,1319,1322,1324,1328,1331,1332,1338,1340,1370,1378,1388,1393,1394,1399,1401,1411,1412,1414,1415,1424,1431,1441,1481,1487,1494,1498,1502,1515,1521,1535,1544,1545,1548,1550,1551,1552,1553,1554,1596,1603,1605,1634,1647,1654,1672,1675,1729,1772,1781,1810,1812,1813,1814,1816,1831,1855,1881,1891,1903,1915,1932,1933,1939,1977,1990,2006,2011,2060,2074,2081,2099,2124,2130,2149,2159,2167,2187,2195,2197,2199,2200,2240,2244,2246,2252,2266,2277,2295,2316,2323,2325,2338,2339,2349,2360,2372,2374,2394,2406,2407,2416,2419,2420,2421,2429,2431,2461,2485,2488,2501,2507,2525,2543,2621,2728,2820,3131,3140,3162",
+                "commercialConditionId": "1",
+                "dimension": {
+                    "cubicweight": 0.0,
+                    "height": 19.0,
+                    "length": 4.6,
+                    "weight": 153.0,
+                    "width": 4.6
+                },
+                "offeringInfo": null,
+                "offeringType": null,
+                "offeringTypeId": null
+            },
+            "measurementUnit": "un",
+            "unitMultiplier": 1.0,
+            "sellingPrice": 740,
+            "isGift": false,
+            "shippingPrice": null,
+            "rewardValue": 0,
+            "freightCommission": 0,
+            "priceDefinition": {
+                "sellingPrices": [
+                    {
+                        "value": 740,
+                        "quantity": 2
+                    }
+                ],
+                "calculatedSellingPrice": 740,
+                "total": 1480,
+                "reason": "priceTable"
+            },
+            "taxCode": null,
+            "parentItemIndex": null,
+            "parentAssemblyBinding": null,
+            "callCenterOperator": null,
+            "serialNumbers": null,
+            "assemblies": [],
+            "costPrice": null
+        },
+        {
+            "uniqueId": "24A9E7FC7E3847D98CC7444009FC8400",
+            "id": "4052",
+            "productId": "4035",
+            "ean": "7896004713342",
+            "lockId": null,
+            "itemAttachment": {
+                "content": {},
+                "name": null
+            },
+            "attachments": [],
+            "quantity": 1,
+            "seller": "sjdigital0709",
+            "name": "Acetilcisteína EMS 600mg Granulado Sabor Laranja 16 Envelopes Genérico ACETILCISTEINA 600MG",
+            "refId": "10085927",
+            "price": 4690,
+            "listPrice": 8715,
+            "manualPrice": null,
+            "manualPriceAppliedBy": null,
+            "priceTags": [
+                {
+                    "name": "discount@price-33b13c26-f9c2-4433-a0e1-47e6c934edef#dfaad920-ef1a-4927-9412-338750729c1d",
+                    "value": -349,
+                    "isPercentual": false,
+                    "identifier": "33b13c26-f9c2-4433-a0e1-47e6c934edef",
+                    "rawValue": -3.49,
+                    "rate": null,
+                    "jurisCode": null,
+                    "jurisType": null,
+                    "jurisName": null
+                }
+            ],
+            "imageUrl": "https://sjdigital.vteximg.com.br/arquivos/ids/1185135-90-90/10085927_1.jpg?v=639116953380900000",
+            "detailUrl": "/acetilcisteina-ems-600mg-granulado-sabor-laranja-16-envelopes-generico-10085927/p",
+            "components": [],
+            "bundleItems": [],
+            "params": [],
+            "offerings": [],
+            "attachmentOfferings": [
+                {
+                    "name": "vtex.subscription.assinatura",
+                    "required": false,
+                    "schema": {
+                        "vtex.subscription.key.frequency": {
+                            "MaximumNumberOfCharacters": 7,
+                            "Domain": [
+                                "10 day",
+                                " 15 day",
+                                " 30 day",
+                                " 60 day",
+                                " 90 day"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "sellerSku": "4052",
+            "priceValidUntil": "2027-05-01T02:59:01.0000000+00:00",
+            "commission": 0,
+            "tax": 0,
+            "preSaleDate": null,
+            "additionalInfo": {
+                "brandName": "Ems",
+                "brandId": "2044778",
+                "categoriesIds": "/2001/20012/200038/",
+                "categories": [
+                    {
+                        "id": 200038,
+                        "name": "Para Tosse"
+                    },
+                    {
+                        "id": 20012,
+                        "name": "Gripe E Resfriado"
+                    },
+                    {
+                        "id": 2001,
+                        "name": "Medicamentos"
+                    }
+                ],
+                "productClusterId": "575,594,607,694,737,740,747,790,791,798,801,806,810,811,814,821,854,863,864,867,868,869,887,890,894,895,897,900,904,940,950,958,977,979,980,981,982,983,995,997,998,1000,1001,1002,1003,1032,1049,1062,1064,1067,1072,1073,1074,1075,1084,1085,1086,1097,1098,1100,1125,1126,1127,1128,1132,1144,1152,1154,1155,1185,1186,1187,1201,1202,1203,1223,1246,1249,1250,1251,1252,1254,1258,1261,1281,1290,1298,1317,1319,1322,1324,1328,1331,1332,1338,1340,1370,1378,1388,1393,1394,1411,1412,1414,1415,1421,1422,1424,1431,1441,1481,1487,1494,1498,1502,1521,1535,1544,1545,1548,1550,1551,1552,1553,1554,1596,1603,1605,1626,1634,1647,1654,1672,1675,1690,1729,1747,1772,1781,1786,1810,1812,1813,1814,1816,1831,1855,1881,1891,1903,1915,1932,1933,1939,1977,1990,2006,2060,2074,2081,2099,2123,2124,2130,2149,2159,2167,2187,2195,2197,2199,2240,2244,2246,2252,2266,2277,2295,2316,2323,2325,2338,2339,2349,2360,2372,2374,2375,2394,2407,2416,2419,2420,2421,2429,2431,2461,2485,2488,2501,2507,2543,2621,2927,3018,3032,3036,3048,3082,3087,3195,3232,3233,3236,3256,3257",
+                "commercialConditionId": "1",
+                "dimension": {
+                    "cubicweight": 0.0,
+                    "height": 8.5,
+                    "length": 8.0,
+                    "weight": 115.0,
+                    "width": 6.5
+                },
+                "offeringInfo": null,
+                "offeringType": null,
+                "offeringTypeId": null
+            },
+            "measurementUnit": "un",
+            "unitMultiplier": 1.0,
+            "sellingPrice": 4341,
+            "isGift": false,
+            "shippingPrice": null,
+            "rewardValue": 0,
+            "freightCommission": 0,
+            "priceDefinition": {
+                "sellingPrices": [
+                    {
+                        "value": 4341,
+                        "quantity": 1
+                    }
+                ],
+                "calculatedSellingPrice": 4341,
+                "total": 4341,
+                "reason": "priceTable"
+            },
+            "taxCode": null,
+            "parentItemIndex": null,
+            "parentAssemblyBinding": null,
+            "callCenterOperator": null,
+            "serialNumbers": null,
+            "assemblies": [],
+            "costPrice": null
+        },
+        {
+            "uniqueId": "3FBC8FCF6258442295412E4FBD04FF49",
+            "id": "35668",
+            "productId": "1258602",
+            "ean": "7899420508981",
+            "lockId": null,
+            "itemAttachment": {
+                "content": {},
+                "name": null
+            },
+            "attachments": [],
+            "quantity": 1,
+            "seller": "sjdigital0709",
+            "name": "Analgésico Ketalgi 500mg 14 Comprimidos Revestidos Supera KETALGI 500MG 14CP REV SUPERA",
+            "refId": "10044471",
+            "price": 3579,
+            "listPrice": 4449,
+            "manualPrice": null,
+            "manualPriceAppliedBy": null,
+            "priceTags": [
+                {
+                    "name": "discount@price-33b13c26-f9c2-4433-a0e1-47e6c934edef#dfaad920-ef1a-4927-9412-338750729c1d",
+                    "value": -266,
+                    "isPercentual": false,
+                    "identifier": "33b13c26-f9c2-4433-a0e1-47e6c934edef",
+                    "rawValue": -2.66,
+                    "rate": null,
+                    "jurisCode": null,
+                    "jurisType": null,
+                    "jurisName": null
+                }
+            ],
+            "imageUrl": "https://sjdigital.vteximg.com.br/arquivos/ids/1126612-90-90/analgesico-ketalgi-500mg-14-comprimidos-revestidos-supera-10044471_1.jpg?v=638732544865030000",
+            "detailUrl": "/analgesico-ketalgi-500mg-14-comprimidos-revestidos-supera-10044471/p",
+            "components": [],
+            "bundleItems": [],
+            "params": [],
+            "offerings": [],
+            "attachmentOfferings": [
+                {
+                    "name": "vtex.subscription.assinatura",
+                    "required": false,
+                    "schema": {
+                        "vtex.subscription.key.frequency": {
+                            "MaximumNumberOfCharacters": 7,
+                            "Domain": [
+                                "10 day",
+                                " 15 day",
+                                " 30 day",
+                                " 60 day",
+                                " 90 day"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "sellerSku": "35668",
+            "priceValidUntil": "2026-06-07T02:59:01.0000000+00:00",
+            "commission": 0,
+            "tax": 0,
+            "preSaleDate": null,
+            "additionalInfo": {
+                "brandName": "Cimed",
+                "brandId": "2044783",
+                "categoriesIds": "/2001/20022/",
+                "categories": [
+                    {
+                        "id": 20022,
+                        "name": "Analgésicos"
+                    },
+                    {
+                        "id": 2001,
+                        "name": "Medicamentos"
+                    }
+                ],
+                "productClusterId": "1258,1261,1324,1781,2277,2325,2338,2339,2349,2360,2372,2374,2394,2407,2416,2419,2420,2421,2429,2431,2461,2485,2488,2501,2507,2543,2621,2947,3032,3036,3087",
+                "commercialConditionId": "1",
+                "dimension": {
+                    "cubicweight": 0.0,
+                    "height": 4.5,
+                    "length": 10.5,
+                    "weight": 31.0,
+                    "width": 7.0
+                },
+                "offeringInfo": null,
+                "offeringType": null,
+                "offeringTypeId": null
+            },
+            "measurementUnit": "un",
+            "unitMultiplier": 1.0,
+            "sellingPrice": 3313,
+            "isGift": false,
+            "shippingPrice": null,
+            "rewardValue": 0,
+            "freightCommission": 0,
+            "priceDefinition": {
+                "sellingPrices": [
+                    {
+                        "value": 3313,
+                        "quantity": 1
+                    }
+                ],
+                "calculatedSellingPrice": 3313,
+                "total": 3313,
+                "reason": "priceTable"
+            },
+            "taxCode": null,
+            "parentItemIndex": null,
+            "parentAssemblyBinding": null,
+            "callCenterOperator": null,
+            "serialNumbers": null,
+            "assemblies": [],
+            "costPrice": null
+        }
+    ],
+    "marketplaceItems": [],
+    "cancellationRequests": null,
+    "approvedBy": null,
+    "cancelledBy": null,
+    "purchaseAgentData": null,
+    "pendingData": null,
+    "creationEnvironment": "STABLE",
+    "authorizationPolicyData": {
+        "status": "accepted",
+        "deniedPolicies": [],
+        "pendingPolicies": [],
+        "acceptedPolicies": []
+    },
+    "budgetData": null
+}

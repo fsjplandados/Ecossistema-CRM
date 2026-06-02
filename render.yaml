@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: vtex-dashboard-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: VTEX_ACCOUNT_NAME
+        value: sjdigital
+      - key: VTEX_ENVIRONMENT
+        value: vtexcommercestable
+      - key: VTEX_APP_KEY
+        sync: false
+      - key: VTEX_APP_TOKEN
+        sync: false
+      - key: SYNC_SECRET_TOKEN
+        generateValue: true
