@@ -860,3 +860,22 @@ def get_products_performance(
     results.sort(key=lambda x: x["revenue"], reverse=True)
     cache_set(cache_key, results, get_cache_ttl(date_from))
     return results
+
+# ── Status de Sincronização ───────────────────────────────────
+@app.get("/api/sync/status")
+def get_sync_status(db=Depends(get_db)):
+    try:
+        with db.cursor() as cur:
+            cur.execute("""
+                SELECT execution_time 
+                FROM sync_logs 
+                WHERE status = 'success' 
+                ORDER BY execution_time DESC 
+                LIMIT 1
+            """)
+            row = cur.fetchone()
+            if row and row["execution_time"]:
+                return {"last_run_time": row["execution_time"].isoformat()}
+            return {"last_run_time": None}
+    except Exception as e:
+        return {"last_run_time": None, "error": str(e)}
