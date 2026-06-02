@@ -86,8 +86,8 @@ export interface KPICardProps {
   type: keyof typeof kpiIcons;
   label: string;
   value: string;
-  yoy?: number | null;   // Year over Year %
-  mom?: number | null;   // Month over Month %
+  yoy?: number | null;   // vs Ontem %
+  mom?: number | null;   // vs Media 7 dias %
   yesterday?: string;
   avg7d?: string;
 }
@@ -131,13 +131,13 @@ export default function KPICard({
         <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 2 }}>
           {yoy != null && (
             <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-              <span style={{ fontFamily: "Inter", fontSize: 10, color: "#9CA3AF" }}>YoY</span>
+              <span style={{ fontFamily: "Inter", fontSize: 10, color: "#9CA3AF" }}>vs Ontem</span>
               <Delta value={yoy} />
             </div>
           )}
           {mom != null && (
             <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-              <span style={{ fontFamily: "Inter", fontSize: 10, color: "#9CA3AF" }}>MoM</span>
+              <span style={{ fontFamily: "Inter", fontSize: 10, color: "#9CA3AF" }}>vs 7d</span>
               <Delta value={mom} />
             </div>
           )}
