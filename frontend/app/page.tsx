@@ -291,7 +291,7 @@ export default function PerformancePage() {
     try {
       const p = new URLSearchParams({ date_from: dateFrom, date_to: dateTo });
       appendFilters(p);
-      if (selectedHour) p.append("hour", selectedHour);
+
       if (selectedCategoryRow) p.append("category", selectedCategoryRow);
       const res = await fetch(`${API_URL}/api/dashboard/top-products?${p}`);
       const data = await res.json();
@@ -301,7 +301,7 @@ export default function PerformancePage() {
     } finally {
       setProdLoading(false);
     }
-  }, [dateFrom, dateTo, selChannels, selBrands, selCategories, selUtmSources, selUtmCampaigns, selUtmMediums, selUtmiParts, selectedHour, selectedCategoryRow]);
+  }, [dateFrom, dateTo, selChannels, selBrands, selCategories, selUtmSources, selUtmCampaigns, selUtmMediums, selUtmiParts, selCoupons, selHours, selectedCategoryRow]);
 
   useEffect(() => {
     fetchTopProducts();
@@ -703,9 +703,9 @@ export default function PerformancePage() {
             <TopProductsList 
               data={prodData} 
               loading={prodLoading} 
-              selectedHour={selectedHour}
+              selectedHour={selHours.length ? selHours[0] : null}
               selectedCategory={selectedCategoryRow}
-              onClearHour={() => setSelectedHour(null)}
+              onClearHour={() => { setSelHours([]); setTimeout(() => fetchData(), 50); }}
               onClearCategory={() => setSelectedCategoryRow(null)}
             />
           </div>
