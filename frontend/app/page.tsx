@@ -9,6 +9,7 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  ReferenceArea,
 } from "recharts";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
@@ -118,6 +119,8 @@ export default function PerformancePage() {
   const [selUtmiParts, setSelUtmiParts] = useState<string[]>([]);
   const [selCoupons, setSelCoupons] = useState<string[]>([]);
   const [selHours, setSelHours] = useState<string[]>([]);
+  const [refAreaLeft, setRefAreaLeft] = useState<string | null>(null);
+  const [refAreaRight, setRefAreaRight] = useState<string | null>(null);
 
   const [selectedCategoryRow, setSelectedCategoryRow] = useState<string | null>(null);
   const [drillDownData, setDrillDownData] = useState<any[]>([]);
@@ -554,12 +557,31 @@ export default function PerformancePage() {
               <LineChart
                 data={chartData}
                 margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
-                onClick={(e: any) => {
-                  if (e && e.activeLabel) {
-                    const hr = e.activeLabel.split(":")[0];
+                onMouseDown={(e: any) => {
+                  if (e && e.activeLabel) setRefAreaLeft(e.activeLabel);
+                }}
+                onMouseMove={(e: any) => {
+                  if (refAreaLeft && e && e.activeLabel) setRefAreaRight(e.activeLabel);
+                }}
+                onMouseUp={() => {
+                  if (refAreaLeft && refAreaRight) {
+                    const l = parseInt(refAreaLeft.split(":")[0]);
+                    const r = parseInt(refAreaRight.split(":")[0]);
+                    const start = Math.min(l, r);
+                    const end = Math.max(l, r);
+                    const range = [];
+                    for (let i = start; i <= end; i++) {
+                      range.push(String(i));
+                    }
+                    setSelHours(range);
+                    setTimeout(() => fetchData(), 50);
+                  } else if (refAreaLeft && !refAreaRight) {
+                    const hr = refAreaLeft.split(":")[0];
                     setSelHours([hr]);
                     setTimeout(() => fetchData(), 50);
                   }
+                  setRefAreaLeft(null);
+                  setRefAreaRight(null);
                 }}
               >
                 <CartesianGrid
@@ -626,8 +648,18 @@ export default function PerformancePage() {
                   strokeWidth={1.5}
                   strokeDasharray="6 3"
                   dot={false}
-                  connectNulls={false}
+                  activeDot={{ r: 5, strokeWidth: 0, fill: "#E5E7EB" }}
                 />
+
+                {refAreaLeft && refAreaRight ? (
+                  <ReferenceArea
+                    x1={refAreaLeft}
+                    x2={refAreaRight}
+                    strokeOpacity={0.3}
+                    fill="#007BFF"
+                    fillOpacity={0.1}
+                  />
+                ) : null}
               </LineChart>
             </ResponsiveContainer>
 
