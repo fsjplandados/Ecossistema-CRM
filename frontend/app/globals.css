@@ -55,7 +55,6 @@ html, body {
 .header-logo img {
   height: 44px;
   width: auto;
-  filter: brightness(0) invert(1);
 }
 
 .header-title {

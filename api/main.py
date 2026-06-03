@@ -22,7 +22,31 @@ SYNC_SECRET    = os.getenv("SYNC_SECRET_TOKEN", "change-me")
 
 log = logging.getLogger("uvicorn")
 
-app = FastAPI(title="Dashboard VTEX API", version="2.0.0")
+import sys
+from contextlib import asynccontextmanager
+from apscheduler.schedulers.background import BackgroundScheduler
+
+# Adiciona a pasta etl ao path para importar o run_delta_sync
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", "etl"))
+try:
+    from delta_sync import run_delta_sync
+except ImportError:
+    run_delta_sync = None
+
+scheduler = BackgroundScheduler()
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Inicia o scheduler no startup da API
+    if run_delta_sync:
+        scheduler.add_job(run_delta_sync, "interval", minutes=60)
+        scheduler.start()
+        log.info("APScheduler iniciado: run_delta_sync a cada 60 min")
+    yield
+    # Desliga no shutdown
+    scheduler.shutdown()
+
+app = FastAPI(title="Dashboard VTEX API", version="2.0.0", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -236,6 +260,14 @@ def get_filters(db=Depends(get_db)):
         """)
         utmi_parts = [r["utmi_part"] for r in cur.fetchall()]
 
+        # Coupons
+        cur.execute("""
+            SELECT DISTINCT coupon FROM order_marketing
+            WHERE coupon IS NOT NULL AND coupon != ''
+            ORDER BY coupon
+        """)
+        coupons = [r["coupon"] for r in cur.fetchall()]
+
         # Status
         cur.execute("SELECT DISTINCT status, status_description FROM orders ORDER BY status")
         statuses = [{"value": r["status"], "label": r["status_description"]} for r in cur.fetchall()]
@@ -248,6 +280,7 @@ def get_filters(db=Depends(get_db)):
         "utm_campaigns": utm_campaigns,
         "utm_mediums": utm_mediums,
         "utmi_parts": utmi_parts,
+        "coupons": coupons,
         "statuses": statuses,
     }
     cache_set(cache_key, result)
@@ -266,7 +299,9 @@ def hourly_revenue(
     utm_campaign: Optional[str] = Query(None),
     utm_medium: Optional[str] = Query(None),
     utmi_part: Optional[str] = Query(None),
+    coupon: Optional[str] = Query(None),
     status: Optional[str] = Query(None),
+    hours: Optional[str] = Query(None, description="Horas separadas por virgula (ex: 8,9,10)"),
     db=Depends(get_db),
 ):
     # Parse multi-filtros (aceita valores separados por virgula)
@@ -277,9 +312,11 @@ def hourly_revenue(
     utm_campaign_v = parse_multi(utm_campaign)
     utm_medium_v = parse_multi(utm_medium)
     utmi_part_v = parse_multi(utmi_part)
+    coupon_v = parse_multi(coupon)
     status_v = parse_multi(status)
+    hours_v = parse_multi(hours)
 
-    cache_key = f"hourly:{date_from}:{date_to}:{channel}:{brand}:{category}:{utm_source}:{utm_campaign}:{utm_medium}:{utmi_part}:{status}"
+    cache_key = f"hourly:{date_from}:{date_to}:{channel}:{brand}:{category}:{utm_source}:{utm_campaign}:{utm_medium}:{utmi_part}:{coupon}:{status}:{hours}"
     cached = cache_get(cache_key)
     if cached:
         return cached
@@ -291,12 +328,18 @@ def hourly_revenue(
     add_in_condition(conditions, params, "o.channel_type", channel_v)
     add_in_condition(conditions, params, "o.status", status_v)
 
-    # UTM — requer JOIN com marketing
-    needs_mkt = bool(utm_source_v or utm_campaign_v or utm_medium_v or utmi_part_v)
+    # UTM e Cupons — requer JOIN com marketing
+    needs_mkt = bool(utm_source_v or utm_campaign_v or utm_medium_v or utmi_part_v or coupon_v)
     add_in_condition(conditions, params, "m.utm_source", utm_source_v)
     add_in_condition(conditions, params, "m.utm_campaign", utm_campaign_v)
     add_in_condition(conditions, params, "m.utm_medium", utm_medium_v)
     add_in_condition(conditions, params, "m.utmi_part", utmi_part_v)
+    add_in_condition(conditions, params, "m.coupon", coupon_v)
+
+    # Filtro de Horas
+    if hours_v:
+        conditions.append(f"EXTRACT(HOUR FROM {TZ_DATE}) = ANY(%s::int[])")
+        params.append(hours_v)
 
     # Marca/Categoria — subquery para evitar duplicacao de pedidos
     item_sub, item_params = build_item_subquery(brand_v, category_v)
@@ -365,6 +408,8 @@ def get_kpis(
     utm_campaign: Optional[str] = Query(None),
     utm_medium: Optional[str] = Query(None),
     utmi_part: Optional[str] = Query(None),
+    coupon: Optional[str] = Query(None),
+    hours: Optional[str] = Query(None, description="Horas separadas por virgula"),
     db=Depends(get_db),
 ):
     channel_v = parse_multi(channel)
@@ -374,8 +419,10 @@ def get_kpis(
     utm_campaign_v = parse_multi(utm_campaign)
     utm_medium_v = parse_multi(utm_medium)
     utmi_part_v = parse_multi(utmi_part)
+    coupon_v = parse_multi(coupon)
+    hours_v = parse_multi(hours)
 
-    cache_key = f"kpis:{date_from}:{date_to}:{channel}:{brand}:{category}:{utm_source}:{utm_campaign}:{utm_medium}:{utmi_part}"
+    cache_key = f"kpis:{date_from}:{date_to}:{channel}:{brand}:{category}:{utm_source}:{utm_campaign}:{utm_medium}:{utmi_part}:{coupon}:{hours}"
     cached = cache_get(cache_key)
     if cached:
         return cached
@@ -386,12 +433,17 @@ def get_kpis(
     add_in_condition(filter_conds, filter_params, "o.channel_type", channel_v)
 
     mkt_join = ""
-    if utm_source_v or utm_campaign_v or utm_medium_v or utmi_part_v:
+    if utm_source_v or utm_campaign_v or utm_medium_v or utmi_part_v or coupon_v:
         mkt_join = "LEFT JOIN order_marketing m ON m.order_id = o.order_id"
         add_in_condition(filter_conds, filter_params, "m.utm_source", utm_source_v)
         add_in_condition(filter_conds, filter_params, "m.utm_campaign", utm_campaign_v)
         add_in_condition(filter_conds, filter_params, "m.utm_medium", utm_medium_v)
         add_in_condition(filter_conds, filter_params, "m.utmi_part", utmi_part_v)
+        add_in_condition(filter_conds, filter_params, "m.coupon", coupon_v)
+
+    if hours_v:
+        filter_conds.append(f"EXTRACT(HOUR FROM {TZ_DATE}) = ANY(%s::int[])")
+        filter_params.append(hours_v)
 
     item_sub, item_p = build_item_subquery(brand_v, category_v)
     if item_sub:
@@ -457,6 +509,8 @@ def get_categories_performance(
     utm_campaign: Optional[str] = Query(None),
     utm_medium: Optional[str] = Query(None),
     utmi_part: Optional[str] = Query(None),
+    coupon: Optional[str] = Query(None),
+    hours: Optional[str] = Query(None, description="Horas separadas por virgula"),
     db=Depends(get_db),
 ):
     channel_v = parse_multi(channel)
@@ -466,8 +520,10 @@ def get_categories_performance(
     utm_campaign_v = parse_multi(utm_campaign)
     utm_medium_v = parse_multi(utm_medium)
     utmi_part_v = parse_multi(utmi_part)
+    coupon_v = parse_multi(coupon)
+    hours_v = parse_multi(hours)
 
-    cache_key = f"cat_perf:{date_from}:{date_to}:{channel}:{brand}:{category}:{utm_source}:{utm_campaign}:{utm_medium}:{utmi_part}"
+    cache_key = f"cat_perf:{date_from}:{date_to}:{channel}:{brand}:{category}:{utm_source}:{utm_campaign}:{utm_medium}:{utmi_part}:{coupon}:{hours}"
     cached = cache_get(cache_key)
     if cached:
         return cached
@@ -477,12 +533,17 @@ def get_categories_performance(
     add_in_condition(filter_conds, filter_params, "o.channel_type", channel_v)
 
     mkt_join = ""
-    if utm_source_v or utm_campaign_v or utm_medium_v or utmi_part_v:
+    if utm_source_v or utm_campaign_v or utm_medium_v or utmi_part_v or coupon_v:
         mkt_join = "LEFT JOIN order_marketing m ON m.order_id = o.order_id"
         add_in_condition(filter_conds, filter_params, "m.utm_source", utm_source_v)
         add_in_condition(filter_conds, filter_params, "m.utm_campaign", utm_campaign_v)
         add_in_condition(filter_conds, filter_params, "m.utm_medium", utm_medium_v)
         add_in_condition(filter_conds, filter_params, "m.utmi_part", utmi_part_v)
+        add_in_condition(filter_conds, filter_params, "m.coupon", coupon_v)
+
+    if hours_v:
+        filter_conds.append(f"EXTRACT(HOUR FROM {TZ_DATE}) = ANY(%s::int[])")
+        filter_params.append(hours_v)
 
     if brand_v:
         ph = ",".join(["%s"] * len(brand_v))
@@ -612,6 +673,8 @@ def get_top_products(
     utm_campaign: Optional[str] = Query(None),
     utm_medium: Optional[str] = Query(None),
     utmi_part: Optional[str] = Query(None),
+    coupon: Optional[str] = Query(None),
+    hours: Optional[str] = Query(None, description="Horas separadas por virgula"),
     db=Depends(get_db),
 ):
     channel_v = parse_multi(channel)
@@ -621,8 +684,10 @@ def get_top_products(
     utm_campaign_v = parse_multi(utm_campaign)
     utm_medium_v = parse_multi(utm_medium)
     utmi_part_v = parse_multi(utmi_part)
+    coupon_v = parse_multi(coupon)
+    hours_v = parse_multi(hours)
 
-    cache_key = f"top_prod:{date_from}:{date_to}:{hour}:{channel}:{brand}:{category}:{utm_source}:{utm_campaign}:{utm_medium}:{utmi_part}"
+    cache_key = f"top_prod:{date_from}:{date_to}:{hour}:{channel}:{brand}:{category}:{utm_source}:{utm_campaign}:{utm_medium}:{utmi_part}:{coupon}:{hours}"
     cached = cache_get(cache_key)
     if cached:
         return cached
@@ -643,12 +708,17 @@ def get_top_products(
     add_in_condition(filter_conds, filter_params, "o.channel_type", channel_v)
 
     mkt_join = ""
-    if utm_source_v or utm_campaign_v or utm_medium_v or utmi_part_v:
+    if utm_source_v or utm_campaign_v or utm_medium_v or utmi_part_v or coupon_v:
         mkt_join = "LEFT JOIN order_marketing m ON m.order_id = o.order_id"
         add_in_condition(filter_conds, filter_params, "m.utm_source", utm_source_v)
         add_in_condition(filter_conds, filter_params, "m.utm_campaign", utm_campaign_v)
         add_in_condition(filter_conds, filter_params, "m.utm_medium", utm_medium_v)
         add_in_condition(filter_conds, filter_params, "m.utmi_part", utmi_part_v)
+        add_in_condition(filter_conds, filter_params, "m.coupon", coupon_v)
+
+    if hours_v:
+        filter_conds.append(f"EXTRACT(HOUR FROM {TZ_DATE}) = ANY(%s::int[])")
+        filter_params.append(hours_v)
 
     if brand_v:
         ph = ",".join(["%s"] * len(brand_v))

@@ -116,13 +116,15 @@ export default function PerformancePage() {
   const [selUtmCampaigns, setSelUtmCampaigns] = useState<string[]>([]);
   const [selUtmMediums, setSelUtmMediums] = useState<string[]>([]);
   const [selUtmiParts, setSelUtmiParts] = useState<string[]>([]);
+  const [selCoupons, setSelCoupons] = useState<string[]>([]);
+  const [selHours, setSelHours] = useState<string[]>([]);
 
   const [selectedCategoryRow, setSelectedCategoryRow] = useState<string | null>(null);
   const [drillDownData, setDrillDownData] = useState<any[]>([]);
   const [drillDownLoading, setDrillDownLoading] = useState(false);
   const [syncTime, setSyncTime] = useState<string | null>(null);
 
-  const [selectedHour, setSelectedHour] = useState<string | null>(null);
+
   const [catData, setCatData] = useState<any[]>([]);
   const [catLoading, setCatLoading] = useState(false);
   const [prodData, setProdData] = useState<any[]>([]);
@@ -151,7 +153,10 @@ export default function PerformancePage() {
     utm_campaigns: [],
     utm_mediums: [],
     utmi_parts: [],
+    coupons: [],
   });
+
+  const hoursOptions = Array.from({ length: 24 }, (_, i) => String(i));
 
   /* ── Carrega filtros disponíveis ──────────────────────────── */
   useEffect(() => {
@@ -182,6 +187,8 @@ export default function PerformancePage() {
     if (selUtmCampaigns.length) p.append("utm_campaign", selUtmCampaigns.join(","));
     if (selUtmMediums.length) p.append("utm_medium", selUtmMediums.join(","));
     if (selUtmiParts.length) p.append("utmi_part", selUtmiParts.join(","));
+    if (selCoupons.length) p.append("coupon", selCoupons.join(","));
+    if (selHours.length) p.append("hours", selHours.join(","));
   };
 
   /* ── Fetch principal ──────────────────────────────────────── */
@@ -418,6 +425,20 @@ export default function PerformancePage() {
               onChange={setSelUtmiParts}
               placeholder="Todos"
             />
+            <MultiSelectFilter
+              label="Cupom"
+              options={filters.coupons || []}
+              selected={selCoupons}
+              onChange={setSelCoupons}
+              placeholder="Todos"
+            />
+            <MultiSelectFilter
+              label="Horas"
+              options={hoursOptions}
+              selected={selHours}
+              onChange={setSelHours}
+              placeholder="Todas as Horas"
+            />
             <button
               className="btn-apply"
               onClick={fetchData}
@@ -449,7 +470,9 @@ export default function PerformancePage() {
                 setSelUtmCampaigns([]);
                 setSelUtmMediums([]);
                 setSelUtmiParts([]);
-                setSelectedHour(null);
+                setSelCoupons([]);
+                setSelHours([]);
+                setTimeout(() => fetchData(), 50);
                 setSelectedCategoryRow(null);
               }}
             >
@@ -533,7 +556,9 @@ export default function PerformancePage() {
                 margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
                 onClick={(e: any) => {
                   if (e && e.activeLabel) {
-                    setSelectedHour(e.activeLabel);
+                    const hr = e.activeLabel.split(":")[0];
+                    setSelHours([hr]);
+                    setTimeout(() => fetchData(), 50);
                   }
                 }}
               >

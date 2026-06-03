@@ -30,7 +30,7 @@ export default function Header() {
       {/* Logo + Título */}
       <div className="header-logo">
         <Image
-          src="/logo.svg"
+          src="/logo.png"
           alt="Farmácias São João"
           width={160}
           height={50}
