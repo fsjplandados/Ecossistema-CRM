@@ -101,18 +101,40 @@ def run_delta_sync():
                 upsert_order(conn, order)
                 conn.commit()
                 processed += 1
+            except (psycopg2.OperationalError, psycopg2.InterfaceError) as e:
+                log.warning(f"Conexão perdida, reconectando... Erro: {e}")
+                try:
+                    conn = get_conn()
+                    conn.autocommit = False
+                    upsert_order(conn, order)
+                    conn.commit()
+                    processed += 1
+                except Exception as ex:
+                    conn.rollback()
+                    log.error(f"Erro no pedido {order_id} após reconectar: {ex}")
+                    errors += 1
             except Exception as e:
                 conn.rollback()
                 log.error(f"Erro no pedido {order_id}: {e}")
                 errors += 1
 
         # Registrar sincronização
-        with conn.cursor() as cur:
-            cur.execute("""
-                INSERT INTO sync_logs (type, status, records_processed, last_order_date)
-                VALUES ('delta', 'success', %s, NOW())
-            """, (processed,))
-        conn.commit()
+        try:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    INSERT INTO sync_logs (type, status, records_processed, last_order_date)
+                    VALUES ('delta', 'success', %s, NOW())
+                """, (processed,))
+            conn.commit()
+        except (psycopg2.OperationalError, psycopg2.InterfaceError):
+            conn = get_conn()
+            conn.autocommit = False
+            with conn.cursor() as cur:
+                cur.execute("""
+                    INSERT INTO sync_logs (type, status, records_processed, last_order_date)
+                    VALUES ('delta', 'success', %s, NOW())
+                """, (processed,))
+            conn.commit()
 
         log.info(f"✅ Delta concluído — {processed} processados, {errors} erros")
         return {"status": "success", "processed": processed, "errors": errors}
