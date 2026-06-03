@@ -262,7 +262,7 @@ export default function PerformancePage() {
       // Fetch Sync Status
       fetch(`${API_URL}/api/sync/status`)
         .then(r => r.json())
-        .then(data => setSyncTime(data.last_run_time))
+        .then(data => setSyncTime(data.last_sync))
         .catch(() => {});
 
       setKpis(kpiData);
